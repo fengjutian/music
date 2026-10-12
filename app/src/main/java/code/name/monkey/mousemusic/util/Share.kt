@@ -1,0 +1,32 @@
+package code.name.monkey.mousemusic.util
+
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import androidx.core.content.FileProvider
+import java.io.File
+
+/**
+ * Created by hemanths on 2020-02-02.
+ */
+
+object Share {
+    fun shareStoryToSocial(context: Context, uri: Uri) {
+        val feedIntent = Intent(Intent.ACTION_SEND)
+        feedIntent.type = "image/*"
+        feedIntent.putExtra(Intent.EXTRA_STREAM, uri)
+        context.startActivity(feedIntent, null)
+    }
+
+    fun shareFile(context: Context, file: File, mimeType: String) {
+        Intent(Intent.ACTION_SEND).apply {
+            type = mimeType
+            putExtra(Intent.EXTRA_STREAM, FileProvider.getUriForFile(
+                context,
+                context.applicationContext.packageName,
+                file
+            ))
+            context.startActivity(Intent.createChooser(this, null))
+        }
+    }
+}
