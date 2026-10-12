@@ -19,12 +19,10 @@ import code.name.monkey.mousemusic.extensions.show
 import code.name.monkey.mousemusic.fragments.base.AbsPlayerControlsFragment
 import code.name.monkey.mousemusic.fragments.base.goToAlbum
 import code.name.monkey.mousemusic.fragments.base.goToArtist
-import code.name.monkey.mousemusic.fragments.base.goToArtistByName
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.util.ArtistSeparator
 import code.name.monkey.mousemusic.util.PreferenceUtil
 import code.name.monkey.mousemusic.util.color.MediaNotificationProcessor
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.slider.Slider
 
 class BlurPlaybackControlsFragment :
@@ -63,24 +61,6 @@ class BlurPlaybackControlsFragment :
             goToAlbum(requireActivity())
         }
         binding.text.setOnClickListener {
-            handleArtistClick()
-        }
-    }
-    
-    private fun handleArtistClick() {
-        val song = MusicPlayerRemote.currentSong
-        val artistNames = ArtistSeparator.split(song.artistName)
-
-        if (artistNames.size > 1) {
-            // Show dialog for multiple artists
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle(getString(R.string.go_to_artist))
-                .setItems(artistNames.toTypedArray()) { _, which ->
-                    goToArtistByName(requireActivity(), artistNames[which])
-                }
-                .show()
-        } else if (artistNames.isNotEmpty()) {
-            // Single artist - direct action
             goToArtist(requireActivity())
         }
     }

@@ -55,10 +55,12 @@ import code.name.monkey.mousemusic.interfaces.IPaletteColorHolder
 import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.repository.RealRepository
 import code.name.monkey.mousemusic.service.MusicService
+import code.name.monkey.mousemusic.util.ArtistSeparator
 import code.name.monkey.mousemusic.util.NavigationUtil
 import code.name.monkey.mousemusic.util.PreferenceUtil
 import code.name.monkey.mousemusic.util.RingtoneManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
@@ -403,6 +405,20 @@ abstract class AbsPlayerFragment(@LayoutRes layout: Int) : AbsMusicServiceFragme
 fun goToArtist(activity: Activity) {
     if (activity !is MainActivity) return
     val song = MusicPlayerRemote.currentSong
+
+    // A shared credit like "Artist1 / Artist2" has no single artist id in the MediaStore, so the
+    // artist to open has to be chosen and then looked up by name.
+    val artistNames = ArtistSeparator.split(song.artistName)
+    if (artistNames.size > 1) {
+        MaterialAlertDialogBuilder(activity)
+            .setTitle(R.string.go_to_artist)
+            .setItems(artistNames.toTypedArray()) { _, which ->
+                goToArtistByName(activity, artistNames[which])
+            }
+            .show()
+        return
+    }
+
     activity.apply {
 
         // Remove exit transition of current fragment so
