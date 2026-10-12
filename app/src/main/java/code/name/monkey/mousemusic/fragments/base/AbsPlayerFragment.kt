@@ -26,6 +26,7 @@ import androidx.viewpager.widget.ViewPager
 import code.name.monkey.appthemehelper.util.VersionUtils
 import code.name.monkey.mousemusic.EXTRA_ALBUM_ID
 import code.name.monkey.mousemusic.EXTRA_ARTIST_ID
+import code.name.monkey.mousemusic.EXTRA_ARTIST_NAME
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.activities.MainActivity
 import code.name.monkey.mousemusic.activities.tageditor.AbsTagEditorActivity
@@ -417,6 +418,32 @@ fun goToArtist(activity: Activity) {
         findNavController(R.id.fragment_container).navigate(
             R.id.artistDetailsFragment,
             bundleOf(EXTRA_ARTIST_ID to song.artistId)
+        )
+    }
+}
+
+/**
+ * Opens the details of [artistName], which is one artist of a shared credit like
+ * "Artist1 / Artist2" or "Artist1 feat. Artist2". Such an artist has no own artist id in the
+ * MediaStore, so it has to be looked up by name.
+ */
+fun goToArtistByName(activity: Activity, artistName: String) {
+    if (activity !is MainActivity) return
+    activity.apply {
+
+        // Remove exit transition of current fragment so
+        // it doesn't exit with a weird transition
+        currentFragment(R.id.fragment_container)?.exitTransition = null
+
+        //Hide Bottom Bar First, else Bottom Sheet doesn't collapse fully
+        setBottomNavVisibility(false)
+        if (getBottomSheetBehavior().state == BottomSheetBehavior.STATE_EXPANDED) {
+            collapsePanel()
+        }
+
+        findNavController(R.id.fragment_container).navigate(
+            R.id.artistByNameDetailsFragment,
+            bundleOf(EXTRA_ARTIST_NAME to artistName)
         )
     }
 }

@@ -135,11 +135,14 @@ abstract class AbsArtistDetailsFragment : AbsMainActivityFragment(R.layout.fragm
             return
         }
         this.artist = artist
+        // When the artist is opened by name, the artist tag of the songs can credit more than one
+        // artist, so prefer the requested name over the tag of the first song.
+        val displayName = artistName ?: artist.name
         loadArtistImage(artist)
         if (PreferenceUtil.isAllowedToDownloadMetadata(requireContext())) {
-            loadBiography(artist.name)
+            loadBiography(displayName)
         }
-        binding.artistTitle.text = artist.name
+        binding.artistTitle.text = displayName
         binding.text.text = String.format(
             "%s • %s",
             MusicUtil.getArtistInfoString(requireContext(), artist),
@@ -167,12 +170,12 @@ abstract class AbsArtistDetailsFragment : AbsMainActivityFragment(R.layout.fragm
             when (result) {
                 is Result.Loading -> logD("Loading")
                 is Result.Error -> logE("Error")
-                is Result.Success -> artistInfo(result.data)
+                is Result.Success -> artistInfo(result.data, name)
             }
         }
     }
 
-    private fun artistInfo(lastFmArtist: LastFmArtist?) {
+    private fun artistInfo(lastFmArtist: LastFmArtist?, name: String) {
         if (lastFmArtist != null && lastFmArtist.artist != null && lastFmArtist.artist.bio != null) {
             val bioContent = lastFmArtist.artist.bio.content
             if (bioContent != null && bioContent.trim().isNotEmpty()) {
@@ -197,7 +200,7 @@ abstract class AbsArtistDetailsFragment : AbsMainActivityFragment(R.layout.fragm
 
         // If the "lang" parameter is set and no biography is given, retry with default language
         if (biography == null && lang != null) {
-            loadBiography(artist.name, null)
+            loadBiography(name, null)
         }
     }
 

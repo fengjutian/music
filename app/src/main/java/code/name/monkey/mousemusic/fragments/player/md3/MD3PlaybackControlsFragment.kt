@@ -13,6 +13,8 @@ import code.name.monkey.mousemusic.databinding.FragmentMd3PlayerPlaybackControls
 import code.name.monkey.mousemusic.extensions.*
 import code.name.monkey.mousemusic.fragments.base.AbsPlayerControlsFragment
 import code.name.monkey.mousemusic.fragments.base.goToAlbum
+import code.name.monkey.mousemusic.fragments.base.goToArtist
+import code.name.monkey.mousemusic.fragments.base.goToArtistByName
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.PlayPauseButtonOnClickHandler
 import code.name.monkey.mousemusic.util.ArtistSeparator
@@ -78,21 +80,12 @@ class MD3PlaybackControlsFragment :
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(R.string.go_to_artist)
                 .setItems(artistNames.toTypedArray()) { _, which ->
-                    // TODO: Navigate to artist details when artistByName() is implemented
-                    android.widget.Toast.makeText(
-                        requireContext(),
-                        getString(R.string.go_to_artist) + ": ${artistNames[which]}",
-                        android.widget.Toast.LENGTH_SHORT
-                    ).show()
+                    goToArtistByName(requireActivity(), artistNames[which])
                 }
                 .show()
         } else if (artistNames.isNotEmpty()) {
             // Single artist - direct action
-            android.widget.Toast.makeText(
-                requireContext(),
-                getString(R.string.go_to_artist) + ": ${artistNames[0]}",
-                android.widget.Toast.LENGTH_SHORT
-            ).show()
+            goToArtist(requireActivity())
         }
     }
 

@@ -38,4 +38,22 @@ object ArtistSeparator {
             .filter { it.isNotEmpty() }
             .distinct()
     }
+
+    /**
+     * Checks whether [artistName] is credited in [artistString].
+     *
+     * The comparison uses the same separators as [split] and ignores case, so a credit like
+     * `"Artist1 / Artist2"` matches `Artist2` while `Artist` alone does not match `Artists`.
+     *
+     * @param artistString The artist name(s) of a song, may be null or empty
+     * @param artistName A single artist name, as returned by [split]
+     * @return True if [artistName] is one of the credited artists
+     */
+    fun contains(artistString: String?, artistName: String): Boolean {
+        if (artistString.isNullOrEmpty() || artistName.isBlank()) {
+            return false
+        }
+
+        return split(artistString).any { it.equals(artistName, ignoreCase = true) }
+    }
 }

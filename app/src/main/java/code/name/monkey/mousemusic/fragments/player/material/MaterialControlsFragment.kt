@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import code.name.monkey.appthemehelper.util.ATHUtil
 import code.name.monkey.appthemehelper.util.MaterialValueHelper
@@ -14,6 +13,7 @@ import code.name.monkey.mousemusic.databinding.FragmentMaterialPlaybackControlsB
 import code.name.monkey.mousemusic.extensions.*
 import code.name.monkey.mousemusic.fragments.base.AbsPlayerControlsFragment
 import code.name.monkey.mousemusic.fragments.base.goToAlbum
+import code.name.monkey.mousemusic.fragments.base.goToArtistByName
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.PlayPauseButtonOnClickHandler
 import code.name.monkey.mousemusic.util.PreferenceUtil
@@ -67,12 +67,7 @@ class MaterialControlsFragment :
         binding.title.text = song.title
         
         binding.text.setArtistLinks(song.artistName) { artistName ->
-            // TODO: Navigate to artist details when artistByName() is implemented
-            Toast.makeText(
-                requireContext(),
-                getString(R.string.go_to_artist) + ": $artistName",
-                Toast.LENGTH_SHORT
-            ).show()
+            goToArtistByName(requireActivity(), artistName)
         }
 
         if (PreferenceUtil.isSongInfo) {

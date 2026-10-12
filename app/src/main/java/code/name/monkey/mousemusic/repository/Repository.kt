@@ -38,6 +38,7 @@ interface Repository {
     suspend fun albumInfo(artist: String, album: String): Result<LastFmAlbum>
     suspend fun artistById(artistId: Long): Artist
     suspend fun albumArtistByName(name: String): Artist
+    suspend fun artistByName(name: String): Artist
     suspend fun recentArtists(): List<Artist>
     suspend fun topArtists(): List<Artist>
     suspend fun topAlbums(): List<Album>
@@ -136,6 +137,9 @@ class RealRepository(
 
     override suspend fun albumArtistByName(name: String): Artist =
         artistRepository.albumArtist(name)
+
+    override suspend fun artistByName(name: String): Artist =
+        artistRepository.artist(name)
 
     override suspend fun recentArtists(): List<Artist> = lastAddedRepository.recentArtists()
 

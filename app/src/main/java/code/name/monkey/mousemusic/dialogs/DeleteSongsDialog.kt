@@ -144,10 +144,10 @@ class DeleteSongsDialog : DialogFragment() {
     }
 
     fun deleteSongs(songs: List<Song>) {
-        val appContext = requireContext().applicationContext
+        val activity = requireActivity()
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
-                MusicUtil.deleteTracks(appContext, songs, null, null)
+                MusicUtil.deleteTracks(activity, songs, null, null)
             }
             reloadTabs()
             dismissAllowingStateLoss()

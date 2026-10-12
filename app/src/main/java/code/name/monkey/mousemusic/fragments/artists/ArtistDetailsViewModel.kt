@@ -12,7 +12,8 @@ import kotlinx.coroutines.launch
 class ArtistDetailsViewModel(
     private val realRepository: RealRepository,
     private val artistId: Long?,
-    private val artistName: String?
+    private val artistName: String?,
+    private val isAlbumArtist: Boolean = true
 ) : ViewModel(), IMusicServiceEventListener {
     private val artistDetails = MutableLiveData<Artist>()
 
@@ -24,7 +25,14 @@ class ArtistDetailsViewModel(
         viewModelScope.launch(IO) {
             artistId?.let { artistDetails.postValue(realRepository.artistById(it)) }
 
-            artistName?.let { artistDetails.postValue(realRepository.albumArtistByName(it)) }
+            artistName?.let { name ->
+                val artist = if (isAlbumArtist) {
+                    realRepository.albumArtistByName(name)
+                } else {
+                    realRepository.artistByName(name)
+                }
+                artistDetails.postValue(artist)
+            }
         }
     }
 

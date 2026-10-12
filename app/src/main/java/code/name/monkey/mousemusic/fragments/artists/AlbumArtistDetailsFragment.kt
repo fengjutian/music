@@ -9,7 +9,7 @@ class AlbumArtistDetailsFragment : AbsArtistDetailsFragment() {
     private val arguments by navArgs<AlbumArtistDetailsFragmentArgs>()
 
     override val detailsViewModel: ArtistDetailsViewModel by viewModel {
-        parametersOf(null, arguments.extraArtistName)
+        parametersOf(null, arguments.extraArtistName, true)
     }
     override val artistId: Long?
         get() = null

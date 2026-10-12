@@ -5,6 +5,7 @@ import code.name.monkey.mousemusic.ALBUM_ARTIST
 import code.name.monkey.mousemusic.helper.SortOrder
 import code.name.monkey.mousemusic.model.Album
 import code.name.monkey.mousemusic.model.Artist
+import code.name.monkey.mousemusic.util.ArtistSeparator
 import code.name.monkey.mousemusic.util.PreferenceUtil
 import java.text.Collator
 
@@ -22,6 +23,8 @@ interface ArtistRepository {
     fun artist(artistId: Long): Artist
 
     fun albumArtist(artistName: String): Artist
+
+    fun artist(artistName: String): Artist
 }
 
 class RealArtistRepository(
@@ -82,7 +85,32 @@ class RealArtistRepository(
                 getSongLoaderSortOrder()
             )
         )
-        return Artist(artistName, albumRepository.splitIntoAlbums(songs), true)
+        val albums = albumRepository.splitIntoAlbums(songs)
+        if (albums.isEmpty()) {
+            return Artist.empty
+        }
+        return Artist(artistName, albums, true)
+    }
+
+    /**
+     * Looks up an artist by its track artist name, including songs where the artist shares the
+     * credit, e.g. `"Artist1 / Artist2"` or `"Artist1 feat. Artist2"`.
+     *
+     * Only the songs credited to [artistName] are collected so that the albums of the returned
+     * artist don't contain songs of the other artists of a shared credit.
+     */
+    override fun artist(artistName: String): Artist {
+        val songs = songRepository.songs(
+            songRepository.makeSongCursor(
+                AudioColumns.ARTIST + " LIKE ?",
+                arrayOf("%$artistName%"),
+                getSongLoaderSortOrder()
+            )
+        ).filter { ArtistSeparator.contains(it.artistName, artistName) }
+        if (songs.isEmpty()) {
+            return Artist.empty
+        }
+        return Artist(artistName, albumRepository.splitIntoAlbums(songs))
     }
 
     override fun artists(): List<Artist> {
