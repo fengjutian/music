@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.RetroMusic.Base.Adaptive" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.MuseMusic.Base.Adaptive" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="toolbarPopupTheme">@style/ThemeOverlay.Material3.Dark</item>
         <item name="materialAlertDialogTheme">@style/MaterialAlertDialogTheme</item>
         <item name="materialButtonStyle">@style/MaterialButtonTheme</item>
