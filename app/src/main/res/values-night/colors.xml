@@ -18,4 +18,9 @@
     <color name="netease_on_error">#690005</color>
     <color name="netease_ripple">#29FF5C5C</color>
     <color name="netease_shadow">#66000000</color>
+    <color name="apple_glass_surface">#D91A1A1A</color>
+    <color name="apple_glass_surface_strong">#ED242424</color>
+    <color name="apple_glass_highlight">#24FFFFFF</color>
+    <color name="apple_glass_border">#33FFFFFF</color>
+    <color name="apple_glass_shadow">#80000000</color>
 </resources>
