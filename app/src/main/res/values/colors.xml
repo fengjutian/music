@@ -24,7 +24,6 @@
     <color name="apple_glass_surface_strong">#F2FFFFFF</color>
     <color name="apple_glass_highlight">#CCFFFFFF</color>
     <color name="apple_glass_border">#66FFFFFF</color>
-    <color name="apple_glass_shadow">#1F000000</color>
 
     <color name="twenty_percent_black_overlay">#34000000</color>
     <color name="app_shortcut_default_foreground">#607d8b</color>

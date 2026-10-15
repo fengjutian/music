@@ -22,5 +22,4 @@
     <color name="apple_glass_surface_strong">#ED242424</color>
     <color name="apple_glass_highlight">#24FFFFFF</color>
     <color name="apple_glass_border">#33FFFFFF</color>
-    <color name="apple_glass_shadow">#80000000</color>
 </resources>
