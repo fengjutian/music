@@ -25,7 +25,7 @@ class App : Application() {
             modules(appModules)
         }
         // default theme
-        if (!ThemeStore.isConfigured(this, 4)) {
+        if (!ThemeStore.isConfigured(this, 3)) {
             ThemeStore.editTheme(this)
                 .accentColorRes(R.color.netease_brand)
                 .coloredNavigationBar(true)
