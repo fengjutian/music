@@ -1,6 +1,24 @@
 <resources>
 
     <style name="Theme.RetroMusic.MD3" parent="@style/Theme.Material3.DynamicColors.DayNight">
+        <item name="colorPrimary">@color/netease_brand</item>
+        <item name="colorOnPrimary">@color/netease_on_brand</item>
+        <item name="colorPrimaryContainer">@color/netease_brand_container</item>
+        <item name="colorOnPrimaryContainer">@color/netease_on_brand_container</item>
+        <item name="colorSecondary">@color/netease_brand</item>
+        <item name="colorOnSecondary">@color/netease_on_brand</item>
+        <item name="colorSurface">@color/netease_surface</item>
+        <item name="colorOnSurface">@color/netease_text_primary</item>
+        <item name="colorSurfaceVariant">@color/netease_surface_subtle</item>
+        <item name="colorOnSurfaceVariant">@color/netease_text_secondary</item>
+        <item name="colorBackground">@color/netease_background</item>
+        <item name="colorOnBackground">@color/netease_text_primary</item>
+        <item name="colorOutline">@color/netease_outline</item>
+        <item name="colorOutlineVariant">@color/netease_divider</item>
+        <item name="colorAccent">@color/netease_brand</item>
+        <item name="android:colorAccent">@color/netease_brand</item>
+        <item name="android:textColorPrimary">@color/netease_text_primary</item>
+        <item name="android:textColorSecondary">@color/netease_text_secondary</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="roundSelector">@drawable/round_selector</item>
