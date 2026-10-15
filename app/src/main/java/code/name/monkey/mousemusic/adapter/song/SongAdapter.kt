@@ -101,15 +101,10 @@ open class SongAdapter(
             holder.text?.setTypeface(null, Typeface.BOLD)
 
         } else {
-            val outValue = TypedValue()
-            activity.theme.resolveAttribute(android.R.attr.textColorPrimary, outValue, true)
-            val normalColor = if (outValue.resourceId != 0) {
-                ContextCompat.getColor(activity, outValue.resourceId)
-            } else {
-                outValue.data
-            }
-            holder.title?.setTextColor(normalColor)
-            holder.text?.setTextColor(normalColor)
+            val primaryColor = resolveThemeColor(android.R.attr.textColorPrimary)
+            val secondaryColor = resolveThemeColor(android.R.attr.textColorSecondary)
+            holder.title?.setTextColor(primaryColor)
+            holder.text?.setTextColor(secondaryColor)
             holder.title?.setTypeface(null, Typeface.NORMAL)
             holder.text?.setTypeface(null, Typeface.NORMAL)
         }
@@ -155,6 +150,16 @@ open class SongAdapter(
 
     private fun getSongText2(song: Song): String {
         return song.albumName
+    }
+
+    private fun resolveThemeColor(attribute: Int): Int {
+        val value = TypedValue()
+        activity.theme.resolveAttribute(attribute, value, true)
+        return if (value.resourceId != 0) {
+            ContextCompat.getColor(activity, value.resourceId)
+        } else {
+            value.data
+        }
     }
 
     override fun getItemCount(): Int {
