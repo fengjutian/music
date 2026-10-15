@@ -394,7 +394,7 @@
     <string name="reset_action">Sıfırla</string>
     <string name="reset_artist_image">Sanatçı resmini sıfırla</string>
     <string name="restore">Geri yükle</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Müziği zil sesi yapmak için uygulamanın cihaz ayarlarına erişim yetkisi gereklidir</string>
     <string name="ringtone_title">Zil sesi (İsteğe Bağlı)</string>
     <string name="permission_alarm_summary">Uygulamanın alarm ve uyku zamanlayıcısı ayarlamak için özel izinlere ihtiyacı var</string>

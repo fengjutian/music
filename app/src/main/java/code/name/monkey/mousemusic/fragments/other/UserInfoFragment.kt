@@ -24,9 +24,9 @@ import code.name.monkey.mousemusic.extensions.accentColor
 import code.name.monkey.mousemusic.extensions.applyToolbar
 import code.name.monkey.mousemusic.extensions.showToast
 import code.name.monkey.mousemusic.fragments.LibraryViewModel
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.profileBannerOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.userProfileOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.profileBannerOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.userProfileOptions
 import code.name.monkey.mousemusic.util.ImageUtil
 import code.name.monkey.mousemusic.util.PreferenceUtil.userName
 import com.bumptech.glide.Glide
@@ -145,13 +145,13 @@ class UserInfoFragment : Fragment() {
     private fun loadProfile() {
         binding.bannerImage.let {
             Glide.with(this)
-                .load(RetroGlideExtension.getBannerModel())
-                .profileBannerOptions(RetroGlideExtension.getBannerModel())
+                .load(MuseGlideExtension.getBannerModel())
+                .profileBannerOptions(MuseGlideExtension.getBannerModel())
                 .into(it)
         }
         Glide.with(this)
-            .load(RetroGlideExtension.getUserModel())
-            .userProfileOptions(RetroGlideExtension.getUserModel(), requireContext())
+            .load(MuseGlideExtension.getUserModel())
+            .userProfileOptions(MuseGlideExtension.getUserModel(), requireContext())
             .into(binding.userImage)
     }
 

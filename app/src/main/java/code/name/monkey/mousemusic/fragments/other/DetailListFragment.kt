@@ -26,7 +26,7 @@ import code.name.monkey.mousemusic.interfaces.IAlbumClickListener
 import code.name.monkey.mousemusic.interfaces.IArtistClickListener
 import code.name.monkey.mousemusic.model.Album
 import code.name.monkey.mousemusic.model.Artist
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import com.google.android.material.shape.MaterialShapeDrawable
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.transition.MaterialSharedAxis
@@ -199,10 +199,10 @@ class DetailListFragment : AbsMainActivityFragment(R.layout.fragment_playlist_de
         GridLayoutManager(requireContext(), gridCount(), GridLayoutManager.VERTICAL, false)
 
     private fun gridCount(): Int {
-        if (RetroUtil.isTablet) {
-            return if (RetroUtil.isLandscape) 6 else 4
+        if (MuseUtil.isTablet) {
+            return if (MuseUtil.isLandscape) 6 else 4
         }
-        return if (RetroUtil.isLandscape) 4 else 2
+        return if (MuseUtil.isLandscape) 4 else 2
     }
 
 

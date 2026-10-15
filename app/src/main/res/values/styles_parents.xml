@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.RetroMusic.Base.Adaptive" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.MuseMusic.Base.Adaptive" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/netease_brand</item>
         <item name="colorOnPrimary">@color/netease_on_brand</item>
         <item name="colorPrimaryContainer">@color/netease_brand_container</item>
@@ -37,7 +37,7 @@
         <item name="android:windowActionModeOverlay">false</item>
     </style>
 
-    <style name="Theme.RetroMusic.Base" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.MuseMusic.Base" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/netease_brand</item>
         <item name="colorOnPrimary">@color/netease_on_brand</item>
         <item name="colorPrimaryContainer">@color/netease_brand_container</item>
@@ -73,7 +73,7 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
-    <style name="Theme.RetroMusic.Base.Black" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Theme.MuseMusic.Base.Black" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/netease_brand</item>
         <item name="colorOnPrimary">@color/netease_on_brand</item>
         <item name="colorPrimaryContainer">@color/netease_brand_container</item>
@@ -106,7 +106,7 @@
         <item name="windowActionModeOverlay">true</item>
     </style>
 
-    <style name="Theme.RetroMusic.Base.Light" parent="Theme.Material3.Light.NoActionBar">
+    <style name="Theme.MuseMusic.Base.Light" parent="Theme.Material3.Light.NoActionBar">
         <item name="colorPrimary">@color/netease_brand</item>
         <item name="colorOnPrimary">@color/netease_on_brand</item>
         <item name="colorPrimaryContainer">@color/netease_brand_container</item>

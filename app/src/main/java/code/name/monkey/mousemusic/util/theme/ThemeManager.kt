@@ -11,14 +11,14 @@ import code.name.monkey.mousemusic.util.theme.ThemeMode.*
 @StyleRes
 fun Context.getThemeResValue(): Int =
     if (PreferenceUtil.materialYou) {
-        if (generalThemeValue == BLACK) R.style.Theme_RetroMusic_MD3_Black
-        else R.style.Theme_RetroMusic_MD3
+        if (generalThemeValue == BLACK) R.style.Theme_MuseMusic_MD3_Black
+        else R.style.Theme_MuseMusic_MD3
     } else {
         when (generalThemeValue) {
-            LIGHT -> R.style.Theme_RetroMusic_Light
-            DARK -> R.style.Theme_RetroMusic_Base
-            BLACK -> R.style.Theme_RetroMusic_Black
-            AUTO -> R.style.Theme_RetroMusic_FollowSystem
+            LIGHT -> R.style.Theme_MuseMusic_Light
+            DARK -> R.style.Theme_MuseMusic_Base
+            BLACK -> R.style.Theme_MuseMusic_Black
+            AUTO -> R.style.Theme_MuseMusic_FollowSystem
         }
     }
 

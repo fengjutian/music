@@ -303,7 +303,7 @@
     <string name="reset_action">Reset</string>
     <string name="reset_artist_image">Artistaren irudia berrezarri</string>
     <string name="restore">Leheneratu</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="saf_delete_failed">File delete failed: %s</string>
     <!-- SAF -->
     <string name="saf_error_uri">Can\'t get SAF URI</string>

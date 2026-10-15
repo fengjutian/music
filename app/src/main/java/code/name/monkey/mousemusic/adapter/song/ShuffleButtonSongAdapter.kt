@@ -9,7 +9,7 @@ import code.name.monkey.mousemusic.extensions.accentOutlineColor
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import com.google.android.material.button.MaterialButton
 
 class ShuffleButtonSongAdapter(
@@ -44,7 +44,7 @@ class ShuffleButtonSongAdapter(
             }
         } else {
             super.onBindViewHolder(holder, position - 1)
-            val landscape = RetroUtil.isLandscape
+            val landscape = MuseUtil.isLandscape
             if ((PreferenceUtil.songGridSize > 2 && !landscape) || (PreferenceUtil.songGridSizeLand > 5 && landscape)) {
                 holder.menu?.isVisible = false
             }

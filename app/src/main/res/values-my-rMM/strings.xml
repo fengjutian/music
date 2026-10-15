@@ -392,7 +392,7 @@
     <string name="reset_action">Reset</string>
     <string name="reset_artist_image">Reset artist image</string>
     <string name="restore">ပြန်လည်ရယူမည်</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">သီချင်းများကို Ringtone ထားရန် app အား System Settings များကိုပြင်ဆင်ခွင့်ပေးရန်လိုသည်။</string>
     <string name="ringtone_title">Ringtone (Optional)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

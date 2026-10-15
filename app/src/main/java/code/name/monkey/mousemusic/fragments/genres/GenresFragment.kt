@@ -17,7 +17,7 @@ import code.name.monkey.mousemusic.fragments.ReloadType
 import code.name.monkey.mousemusic.fragments.base.AbsRecyclerViewFragment
 import code.name.monkey.mousemusic.interfaces.IGenreClickListener
 import code.name.monkey.mousemusic.model.Genre
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import com.google.android.material.transition.MaterialSharedAxis
 
 class
@@ -34,7 +34,7 @@ GenresFragment : AbsRecyclerViewFragment<GenreAdapter, LinearLayoutManager>(),
     }
 
     override fun createLayoutManager(): LinearLayoutManager {
-        return if (RetroUtil.isLandscape) {
+        return if (MuseUtil.isLandscape) {
             GridLayoutManager(activity, 4)
         } else {
             GridLayoutManager(activity, 2)

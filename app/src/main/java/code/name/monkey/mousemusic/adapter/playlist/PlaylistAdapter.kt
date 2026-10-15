@@ -19,7 +19,7 @@ import code.name.monkey.mousemusic.db.PlaylistEntity
 import code.name.monkey.mousemusic.db.PlaylistWithSongs
 import code.name.monkey.mousemusic.db.toSongs
 import code.name.monkey.mousemusic.extensions.dipToPix
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.playlistOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.playlistOptions
 import code.name.monkey.mousemusic.glide.playlistPreview.PlaylistPreview
 import code.name.monkey.mousemusic.helper.SortOrder.PlaylistSortOrder
 import code.name.monkey.mousemusic.helper.menu.PlaylistMenuHelper

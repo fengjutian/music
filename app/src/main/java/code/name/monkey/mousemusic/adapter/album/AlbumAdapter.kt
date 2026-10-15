@@ -10,10 +10,10 @@ import androidx.fragment.app.FragmentActivity
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.adapter.base.AbsMultiSelectAdapter
 import code.name.monkey.mousemusic.adapter.base.MediaEntryViewHolder
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.albumCoverOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.albumCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.helper.SortOrder
 import code.name.monkey.mousemusic.helper.menu.SongsMenuHelper
 import code.name.monkey.mousemusic.interfaces.IAlbumClickListener
@@ -102,8 +102,8 @@ open class AlbumAdapter(
             .asBitmapPalette()
             .albumCoverOptions(song)
             //.checkIgnoreMediaStore()
-            .load(RetroGlideExtension.getSongModel(song))
-            .into(object : RetroMusicColoredTarget(holder.image!!) {
+            .load(MuseGlideExtension.getSongModel(song))
+            .into(object : MuseMusicColoredTarget(holder.image!!) {
                 override fun onColorReady(colors: MediaNotificationProcessor) {
                     setColors(colors, holder)
                 }

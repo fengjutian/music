@@ -3,10 +3,10 @@ package code.name.monkey.mousemusic.adapter.album
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentActivity
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.albumCoverOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.albumCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.helper.HorizontalAdapterHelper
 import code.name.monkey.mousemusic.interfaces.IAlbumClickListener
 import code.name.monkey.mousemusic.model.Album
@@ -38,8 +38,8 @@ class HorizontalAlbumAdapter(
         Glide.with(activity)
             .asBitmapPalette()
             .albumCoverOptions(album.safeGetFirstSong())
-            .load(RetroGlideExtension.getSongModel(album.safeGetFirstSong()))
-            .into(object : RetroMusicColoredTarget(holder.image!!) {
+            .load(MuseGlideExtension.getSongModel(album.safeGetFirstSong()))
+            .into(object : MuseMusicColoredTarget(holder.image!!) {
                 override fun onColorReady(colors: MediaNotificationProcessor) {
                     setColors(colors, holder)
                 }

@@ -405,7 +405,7 @@
     <string name="reset_action">استرداد</string>
     <string name="reset_artist_image">اعادة ضبط صور الالبومات</string>
     <string name="restore">استرجاع</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">يحتاج التطبيق إلى إذن للوصول إلى إعدادات جهازك من أجل تعيين الموسيقى كنغمة رنين</string>
     <string name="ringtone_title">نغمة الرنين (إختياري)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

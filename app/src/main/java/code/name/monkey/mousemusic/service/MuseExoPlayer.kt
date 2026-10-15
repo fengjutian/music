@@ -22,7 +22,7 @@ import code.name.monkey.mousemusic.util.PreferenceUtil.playbackPitch
 import code.name.monkey.mousemusic.util.PreferenceUtil.playbackSpeed
 import code.name.monkey.mousemusic.util.logE
 
-class RetroExoPlayer(context: Context) : AudioManagerPlayback(context), Player.Listener {
+class MuseExoPlayer(context: Context) : AudioManagerPlayback(context), Player.Listener {
     // Fix provided by : Zak (github: @arrhenius975, mail: zakariatalukdar123@gmail.com)
     // Definition and fix: Fix USB-C/Bluetooth audio routing by setting attributes at init
     private val audioAttributes = AudioAttributes.Builder()
@@ -248,6 +248,6 @@ class RetroExoPlayer(context: Context) : AudioManagerPlayback(context), Player.L
     }
 
     companion object {
-        val TAG: String = RetroExoPlayer::class.java.simpleName
+        val TAG: String = MuseExoPlayer::class.java.simpleName
     }
 }

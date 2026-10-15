@@ -1,7 +1,7 @@
 package code.name.monkey.mousemusic.activities.base
 
-import code.name.monkey.mousemusic.cast.RetroSessionManagerListener
-import code.name.monkey.mousemusic.cast.RetroWebServer
+import code.name.monkey.mousemusic.cast.MuseSessionManagerListener
+import code.name.monkey.mousemusic.cast.MuseWebServer
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.service.CastPlayer
 import com.google.android.gms.cast.framework.CastContext
@@ -18,7 +18,7 @@ abstract class AbsCastActivity : AbsSlidingMusicPanelActivity() {
         CastContext.getSharedInstance(this).sessionManager
     }
 
-    private val webServer: RetroWebServer by inject()
+    private val webServer: MuseWebServer by inject()
 
     private val playServicesAvailable: Boolean by lazy {
         try {
@@ -30,7 +30,7 @@ abstract class AbsCastActivity : AbsSlidingMusicPanelActivity() {
     }
 
     private val sessionManagerListener by lazy {
-        object : RetroSessionManagerListener {
+        object : MuseSessionManagerListener {
             override fun onSessionStarting(castSession: CastSession) {
                 webServer.start()
             }

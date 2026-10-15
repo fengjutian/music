@@ -398,7 +398,7 @@
     <string name="reset_action">Resetovat</string>
     <string name="reset_artist_image">Obnovit obrázek interpreta</string>
     <string name="restore">Obnovit</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Aplikace potřebuje přístup k nastavení zařízení pro nastavení hudby jako vyzvánění</string>
     <string name="ringtone_title">Ringtone (Optional)</string>
     <string name="permission_alarm_summary">Aplikace potřebuje oprávnění aby mohla naplánovat konkrétní budíky pro nastavení časovačů spánku</string>

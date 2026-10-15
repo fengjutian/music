@@ -17,14 +17,14 @@ import code.name.monkey.mousemusic.extensions.show
 import code.name.monkey.mousemusic.extensions.textColorPrimary
 import code.name.monkey.mousemusic.extensions.textColorSecondary
 import code.name.monkey.mousemusic.fragments.base.AbsMusicServiceFragment
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.MusicProgressViewUpdateHelper
 import code.name.monkey.mousemusic.helper.PlayPauseButtonOnClickHandler
 import code.name.monkey.mousemusic.util.ArtistSeparator
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import com.bumptech.glide.Glide
 import kotlin.math.abs
 
@@ -56,7 +56,7 @@ open class MiniPlayerFragment : AbsMusicServiceFragment(R.layout.fragment_mini_p
     }
 
     fun setUpButtons() {
-        if (RetroUtil.isTablet) {
+        if (MuseUtil.isTablet) {
             binding.actionNext.show()
             binding.actionPrevious.show()
         } else {
@@ -98,8 +98,8 @@ open class MiniPlayerFragment : AbsMusicServiceFragment(R.layout.fragment_mini_p
     private fun updateSongCover() {
         val song = MusicPlayerRemote.currentSong
         Glide.with(requireContext())
-            .load(RetroGlideExtension.getSongModel(song))
-            .transition(RetroGlideExtension.getDefaultTransition())
+            .load(MuseGlideExtension.getSongModel(song))
+            .transition(MuseGlideExtension.getDefaultTransition())
             .songCoverOptions(song)
             .into(binding.image)
     }

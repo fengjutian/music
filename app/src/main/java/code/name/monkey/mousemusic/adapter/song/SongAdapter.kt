@@ -19,10 +19,10 @@ import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.adapter.base.AbsMultiSelectAdapter
 import code.name.monkey.mousemusic.adapter.base.MediaEntryViewHolder
 import code.name.monkey.mousemusic.extensions.accentColor
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.SortOrder
 import code.name.monkey.mousemusic.helper.menu.SongMenuHelper
@@ -31,7 +31,7 @@ import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.util.ArtistSeparator
 import code.name.monkey.mousemusic.util.MusicUtil
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import code.name.monkey.mousemusic.util.color.MediaNotificationProcessor
 import com.bumptech.glide.Glide
 import me.zhanghai.android.fastscroll.PopupTextProvider
@@ -109,7 +109,7 @@ open class SongAdapter(
             holder.text?.setTypeface(null, Typeface.NORMAL)
         }
         loadAlbumCover(song, holder)
-        val landscape = RetroUtil.isLandscape
+        val landscape = MuseUtil.isLandscape
         if ((PreferenceUtil.songGridSize > 2 && !landscape) || (PreferenceUtil.songGridSizeLand > 5 && landscape)) {
             holder.menu?.isVisible = false
         }
@@ -132,8 +132,8 @@ open class SongAdapter(
         Glide.with(activity)
             .asBitmapPalette()
             .songCoverOptions(song)
-            .load(RetroGlideExtension.getSongModel(song))
-            .into(object : RetroMusicColoredTarget(holder.image!!) {
+            .load(MuseGlideExtension.getSongModel(song))
+            .into(object : MuseMusicColoredTarget(holder.image!!) {
                 override fun onColorReady(colors: MediaNotificationProcessor) {
                     setColors(colors, holder)
                 }

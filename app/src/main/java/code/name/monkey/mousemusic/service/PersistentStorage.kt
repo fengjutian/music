@@ -33,7 +33,7 @@ class PersistentStorage(context: Context) {
     }
 
     companion object {
-        const val PREFERENCES_NAME = "retro_recent"
+        const val PREFERENCES_NAME = "muse_recent"
 
         @Volatile
         private var instance: PersistentStorage? = null

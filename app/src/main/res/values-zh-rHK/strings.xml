@@ -291,7 +291,7 @@
     <string name="reset_action">重設</string>
     <string name="reset_artist_image">重設歌手相片</string>
     <string name="restore">恢復</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="saf_delete_failed">刪除檔案失敗: %s</string>
     <!-- SAF -->
     <string name="saf_error_uri">獲取SAF URI失敗</string>

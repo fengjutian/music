@@ -394,7 +394,7 @@
     <string name="reset_action">Restablecer</string>
     <string name="reset_artist_image">Reiniciar imagen del artista</string>
     <string name="restore">Restaurar</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">La aplicación necesita permiso para acceder a la configuración de tu dispositivo para establecer música como Tono de Llamada</string>
     <string name="ringtone_title">Tono de Llamada (Opcional)</string>
     <string name="permission_alarm_summary">La aplicación necesita permiso para programar alarmas exactas y establecer temporizadores de sueño</string>

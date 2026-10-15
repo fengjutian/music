@@ -17,14 +17,14 @@ import code.name.monkey.appthemehelper.util.MaterialValueHelper
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.databinding.ActivityAlbumTagEditorBinding
 import code.name.monkey.mousemusic.extensions.*
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
 import code.name.monkey.mousemusic.glide.palette.BitmapPaletteWrapper
 import code.name.monkey.mousemusic.model.ArtworkInfo
 import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.util.ImageUtil
 import code.name.monkey.mousemusic.util.MusicUtil
-import code.name.monkey.mousemusic.util.RetroColorUtil.generatePalette
-import code.name.monkey.mousemusic.util.RetroColorUtil.getColor
+import code.name.monkey.mousemusic.util.MuseColorUtil.generatePalette
+import code.name.monkey.mousemusic.util.MuseColorUtil.getColor
 import code.name.monkey.mousemusic.util.logD
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy

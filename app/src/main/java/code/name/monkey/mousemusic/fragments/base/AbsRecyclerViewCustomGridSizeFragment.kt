@@ -4,7 +4,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.TransitionManager
 import code.name.monkey.mousemusic.R
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import code.name.monkey.mousemusic.util.logD
 import com.google.android.material.transition.MaterialFade
 
@@ -15,7 +15,7 @@ abstract class AbsRecyclerViewCustomGridSizeFragment<A : RecyclerView.Adapter<*>
     private var sortOrder: String? = null
     private var currentLayoutRes: Int = 0
     private val isLandscape: Boolean
-        get() = RetroUtil.isLandscape
+        get() = MuseUtil.isLandscape
 
     val maxGridSize: Int
         get() = if (isLandscape) {

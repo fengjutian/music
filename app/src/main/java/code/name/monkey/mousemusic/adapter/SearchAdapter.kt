@@ -15,10 +15,10 @@ import code.name.monkey.appthemehelper.ThemeStore
 import code.name.monkey.mousemusic.*
 import code.name.monkey.mousemusic.adapter.base.MediaEntryViewHolder
 import code.name.monkey.mousemusic.db.PlaylistWithSongs
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.albumCoverOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.artistImageOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.albumCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.artistImageOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.menu.SongMenuHelper
 import code.name.monkey.mousemusic.model.Album
@@ -81,7 +81,7 @@ class SearchAdapter(
                 holder.title?.text = album.title
                 holder.text?.text = album.artistName
                 Glide.with(activity).asDrawable().albumCoverOptions(album.safeGetFirstSong())
-                    .load(RetroGlideExtension.getSongModel(album.safeGetFirstSong()))
+                    .load(MuseGlideExtension.getSongModel(album.safeGetFirstSong()))
                     .into(holder.image!!)
             }
 
@@ -91,7 +91,7 @@ class SearchAdapter(
                 holder.title?.text = artist.name
                 holder.text?.text = MusicUtil.getArtistInfoString(activity, artist)
                 Glide.with(activity).asDrawable().artistImageOptions(artist).load(
-                    RetroGlideExtension.getArtistModel(artist)
+                    MuseGlideExtension.getArtistModel(artist)
                 ).into(holder.image!!)
             }
 
@@ -101,7 +101,7 @@ class SearchAdapter(
                 holder.title?.text = song.title
                 holder.text?.text = song.albumName
                 Glide.with(activity).asDrawable().songCoverOptions(song)
-                    .load(RetroGlideExtension.getSongModel(song)).into(holder.image!!)
+                    .load(MuseGlideExtension.getSongModel(song)).into(holder.image!!)
             }
 
             GENRE -> {
@@ -129,7 +129,7 @@ class SearchAdapter(
                 holder.title?.text = artist.name
                 holder.text?.text = MusicUtil.getArtistInfoString(activity, artist)
                 Glide.with(activity).asDrawable().artistImageOptions(artist).load(
-                    RetroGlideExtension.getArtistModel(artist)
+                    MuseGlideExtension.getArtistModel(artist)
                 ).into(holder.image!!)
             }
 

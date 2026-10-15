@@ -269,7 +269,7 @@ object BackupHelper : KoinComponent {
     fun getBackupRoot(): File {
         return File(
             getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),
-            "RetroMusic/Backups"
+            "MuseMusic/Backups"
         )
     }
 

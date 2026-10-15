@@ -20,10 +20,10 @@ import code.name.monkey.mousemusic.activities.base.AbsThemeActivity
 import code.name.monkey.mousemusic.databinding.ActivityShareInstagramBinding
 import code.name.monkey.mousemusic.extensions.accentColor
 import code.name.monkey.mousemusic.extensions.setStatusBarColor
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.util.Share
 import code.name.monkey.mousemusic.util.color.MediaNotificationProcessor
@@ -63,8 +63,8 @@ class ShareInstagramStory : AbsThemeActivity() {
             Glide.with(this)
                 .asBitmapPalette()
                 .songCoverOptions(songFinal)
-                .load(RetroGlideExtension.getSongModel(songFinal))
-                .into(object : RetroMusicColoredTarget(binding.image) {
+                .load(MuseGlideExtension.getSongModel(songFinal))
+                .into(object : MuseMusicColoredTarget(binding.image) {
                     override fun onColorReady(colors: MediaNotificationProcessor) {
                         setColors(colors.backgroundColor)
                     }

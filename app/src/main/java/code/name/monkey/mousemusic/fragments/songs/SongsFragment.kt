@@ -14,7 +14,7 @@ import code.name.monkey.mousemusic.fragments.base.AbsRecyclerViewCustomGridSizeF
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.SortOrder.SongSortOrder
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 
 class SongsFragment : AbsRecyclerViewCustomGridSizeFragment<SongAdapter, GridLayoutManager>() {
 
@@ -123,7 +123,7 @@ class SongsFragment : AbsRecyclerViewCustomGridSizeFragment<SongAdapter, GridLay
     override fun onCreateMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateMenu(menu, inflater)
         val gridSizeItem: MenuItem = menu.findItem(R.id.action_grid_size)
-        if (RetroUtil.isLandscape) {
+        if (MuseUtil.isLandscape) {
             gridSizeItem.setTitle(R.string.action_grid_size_land)
         }
         setUpGridSizeMenu(gridSizeItem.subMenu!!)

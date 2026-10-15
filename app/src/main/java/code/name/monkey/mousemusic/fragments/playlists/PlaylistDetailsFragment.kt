@@ -24,7 +24,7 @@ import code.name.monkey.mousemusic.extensions.elevatedAccentColor
 import code.name.monkey.mousemusic.extensions.surfaceColor
 import code.name.monkey.mousemusic.fragments.base.AbsMainActivityFragment
 import code.name.monkey.mousemusic.fragments.search.clearText
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.playlistOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.playlistOptions
 import code.name.monkey.mousemusic.glide.playlistPreview.PlaylistPreview
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.menu.PlaylistMenuHelper

@@ -1,30 +1,30 @@
 <p align="center">
-  <a href="https://retromusic.app">
+  <a href="https://musemusic.app">
     <img src="app\src\main\ic_launcher-web.png" height="128">
     <h1 align="center">MuseMusic 🎵</h1>
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/RetroMusicPlayer/RetroMusicPlayer" style="text-decoration:none" area-label="Android">
+  <a href="https://github.com/MuseMusic/MuseMusic" style="text-decoration:none" area-label="Android">
     <img src="https://img.shields.io/badge/Platform-Android-green.svg">
   </a>
-  <a href="https://github.com/RetroMusicPlayer/RetroMusicPlayer/actions/workflows/android.yml" style="text-decoration:none" area-label="Build Status">
-    <img src="https://github.com/RetroMusicPlayer/RetroMusicPlayer/actions/workflows/android.yml/badge.svg">
+  <a href="https://github.com/MuseMusic/MuseMusic/actions/workflows/android.yml" style="text-decoration:none" area-label="Build Status">
+    <img src="https://github.com/MuseMusic/MuseMusic/actions/workflows/android.yml/badge.svg">
   </a>
-  <a href="https://github.com/RetroMusicPlayer/RetroMusicPlayer" style="text-decoration:none" area-label="Min API: 21">
+  <a href="https://github.com/MuseMusic/MuseMusic" style="text-decoration:none" area-label="Min API: 21">
     <img src="https://img.shields.io/badge/minSdkVersion-21-green.svg">
   </a>
   <a href="https://play.google.com/store/apps/details?id=code.name.monkey.mousemusic" style="text-decoration:none" area-label="Play Store">
     <img src="https://img.shields.io/badge/Download-Google_Play-green.svg">
   </a>
-  <a href="https://github.com/RetroMusicPlayer/RetroMusicPlayer/blob/master/LICENSE.md" style="text-decoration:none" area-label="License: GPL v3">
+  <a href="https://github.com/MuseMusic/MuseMusic/blob/master/LICENSE.md" style="text-decoration:none" area-label="License: GPL v3">
     <img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg">
   </a>
-  <a href="https://twitter.com/retromusicapp" style="text-decoration:none" area-label="Twitter Follow">
-    <img src="https://img.shields.io/twitter/follow/retromusicapp?style=social">
+  <a href="https://twitter.com/musemusic" style="text-decoration:none" area-label="Twitter Follow">
+    <img src="https://img.shields.io/twitter/follow/musemusic?style=social">
   </a>
-  <a href="https://crowdin.com/project/retromusicplayer" style="text-decoration:none" area-label="Crowdin">
-    <img src="https://badges.crowdin.net/retromusicplayer/localized.svg">
+  <a href="https://crowdin.com/project/musemusic" style="text-decoration:none" area-label="Crowdin">
+    <img src="https://badges.crowdin.net/musemusic/localized.svg">
   </a>
 
 </p>
@@ -40,12 +40,12 @@ ___
 ## Download
 | Play Store | F-Droid | Obtanium |
 |:-:|:-:|:-:|
-| [<img src="assets/google-play-badge.png" height="80">](https://play.google.com/store/apps/details?id=code.name.monkey.mousemusic) | [<img src="https://f-droid.org/badge/get-it-on.png" height="80">](https://f-droid.org/en/packages/code.name.monkey.mousemusic/) | <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/{%22id%22:%22code.name.monkey.mousemusic%22,%22url%22:%22https://github.com/RetroMusicPlayer/RetroMusicPlayer%22,%22author%22:%22RetroMusicPlayer%22,%22name%22:%22MuseMusic%22}"><img src="https://raw.githubusercontent.com/ImranR98/Obtainium/b1c8ac6f2ab08497189721a788a5763e28ff64cd/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="80"></a>
+| [<img src="assets/google-play-badge.png" height="80">](https://play.google.com/store/apps/details?id=code.name.monkey.mousemusic) | [<img src="https://f-droid.org/badge/get-it-on.png" height="80">](https://f-droid.org/en/packages/code.name.monkey.mousemusic/) | <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/{%22id%22:%22code.name.monkey.mousemusic%22,%22url%22:%22https://github.com/MuseMusic/MuseMusic%22,%22author%22:%22MuseMusic%22,%22name%22:%22MuseMusic%22}"><img src="https://raw.githubusercontent.com/ImranR98/Obtainium/b1c8ac6f2ab08497189721a788a5763e28ff64cd/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="80"></a>
  |
 
-or get it from the [GitHub Releases](https://github.com/RetroMusicPlayer/RetroMusicPlayer/releases).
+or get it from the [GitHub Releases](https://github.com/MuseMusic/MuseMusic/releases).
 
-## ⚠ Join [@retromusiclog](https://telegram.me/retromusiclog) on Telegram for important updates.
+## ⚠ Join [@musemusiclog](https://telegram.me/musemusiclog) on Telegram for important updates.
 ___
 
 ## 📱 Screenshots
@@ -116,7 +116,7 @@ favorite songs. No other music player has this feature.
 -  Create, edit and import playlists
 -  Playing queue with reorder
 -  User profile
--  30+ languages support (help translate the project: [Crowdin](https://crowdin.com/project/retromusicplayer)
+-  30+ languages support (help translate the project: [Crowdin](https://crowdin.com/project/musemusic)
 -  Browse and play your music by songs, albums, artists, playlists and
   genre
 -  Smart Auto Playlists - Recently played, most played and history
@@ -128,16 +128,16 @@ ___
 
 
 ## ❓ FAQ
-Please read the FAQ [here](https://retromusic.app/faq.html)
+Please read the FAQ [here](https://musemusic.app/faq.html)
 
-In any case, if you find or notice any bugs please report them by creating an issue or by contacting us in the [Telegram help & feedback group](https://t.me/retromusicapp).
-If you have any feature suggestions, please create an issue with detailed information or by contacting us in the [Telegram suggestions group](https://t.me/retro_music_suggestion).
+In any case, if you find or notice any bugs please report them by creating an issue or by contacting us in the [Telegram help & feedback group](https://t.me/musemusic).
+If you have any feature suggestions, please create an issue with detailed information or by contacting us in the [Telegram suggestions group](https://t.me/muse_music_suggestion).
 
 ## 🔗 Social links
-**Telegram:** https://t.me/retromusicapp <br>
-**Crowdin**: https://crowdin.com/project/retromusicplayer <br>
-**Pinterest:** https://pinterest.com/retromusicapp <br>
-**Twitter:** https://twitter.com/retromusicapp <br>
+**Telegram:** https://t.me/musemusic <br>
+**Crowdin**: https://crowdin.com/project/musemusic <br>
+**Pinterest:** https://pinterest.com/musemusic <br>
+**Twitter:** https://twitter.com/musemusic <br>
 
 ## 🗂️ License
 

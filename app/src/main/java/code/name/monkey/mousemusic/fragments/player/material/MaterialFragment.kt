@@ -66,7 +66,7 @@ class MaterialFragment : AbsPlayerFragment(R.layout.fragment_material) {
                 binding.colorGradientBackground.background = drawable
             }
         }
-        valueAnimator?.setDuration(ViewUtil.RETRO_MUSIC_ANIM_TIME.toLong())?.start()
+        valueAnimator?.setDuration(ViewUtil.MUSE_MUSIC_ANIM_TIME.toLong())?.start()
     }
 
 

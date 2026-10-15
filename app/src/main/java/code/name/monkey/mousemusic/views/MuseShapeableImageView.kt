@@ -9,7 +9,7 @@ import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.ShapeAppearanceModel
 
 
-class RetroShapeableImageView @JvmOverloads constructor(
+class MuseShapeableImageView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = -1
@@ -17,7 +17,7 @@ class RetroShapeableImageView @JvmOverloads constructor(
 
 
     init {
-        context.withStyledAttributes(attrs, R.styleable.RetroShapeableImageView, defStyle, -1) {
+        context.withStyledAttributes(attrs, R.styleable.MuseShapeableImageView, defStyle, -1) {
             addOnLayoutChangeListener { _, _, _, _, _, _, _, _, _ ->
                 val radius = width / 2f
                 shapeAppearanceModel = ShapeAppearanceModel().withCornerSize(radius)

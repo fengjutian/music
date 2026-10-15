@@ -5,8 +5,8 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentActivity
 import code.name.monkey.mousemusic.R
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote.isPlaying
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote.playNextSong
@@ -64,7 +64,7 @@ class PlayingQueueAdapter(
             return
         }
         Glide.with(activity)
-            .load(RetroGlideExtension.getSongModel(song))
+            .load(MuseGlideExtension.getSongModel(song))
             .songCoverOptions(song)
             .into(holder.image!!)
     }

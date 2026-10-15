@@ -18,7 +18,7 @@ import code.name.monkey.mousemusic.helper.SortOrder.AlbumSortOrder
 import code.name.monkey.mousemusic.interfaces.IAlbumClickListener
 import code.name.monkey.mousemusic.service.MusicService
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 
 class AlbumsFragment : AbsRecyclerViewCustomGridSizeFragment<AlbumAdapter, GridLayoutManager>(),
     IAlbumClickListener {
@@ -131,7 +131,7 @@ class AlbumsFragment : AbsRecyclerViewCustomGridSizeFragment<AlbumAdapter, GridL
     override fun onCreateMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateMenu(menu, inflater)
         val gridSizeItem: MenuItem = menu.findItem(R.id.action_grid_size)
-        if (RetroUtil.isLandscape) {
+        if (MuseUtil.isLandscape) {
             gridSizeItem.setTitle(R.string.action_grid_size_land)
         }
         setUpGridSizeMenu(gridSizeItem.subMenu!!)

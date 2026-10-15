@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.extensions.openUrl
 import code.name.monkey.mousemusic.model.Contributor
-import code.name.monkey.mousemusic.views.RetroShapeableImageView
+import code.name.monkey.mousemusic.views.MuseShapeableImageView
 import com.bumptech.glide.Glide
 
 class ContributorAdapter(
@@ -67,7 +67,7 @@ class ContributorAdapter(
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title)
         val text: TextView = itemView.findViewById(R.id.text)
-        val image: RetroShapeableImageView = itemView.findViewById(R.id.icon)
+        val image: MuseShapeableImageView = itemView.findViewById(R.id.icon)
 
         internal fun bindData(contributor: Contributor) {
             title.text = contributor.name

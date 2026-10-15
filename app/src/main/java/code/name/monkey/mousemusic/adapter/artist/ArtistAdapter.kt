@@ -13,10 +13,10 @@ import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.adapter.base.AbsMultiSelectAdapter
 import code.name.monkey.mousemusic.adapter.base.MediaEntryViewHolder
 import code.name.monkey.mousemusic.extensions.hide
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.artistImageOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.artistImageOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.helper.menu.SongsMenuHelper
 import code.name.monkey.mousemusic.interfaces.IAlbumArtistClickListener
 import code.name.monkey.mousemusic.interfaces.IArtistClickListener
@@ -100,9 +100,9 @@ class ArtistAdapter(
         Glide.with(activity)
             .asBitmapPalette()
             .artistImageOptions(artist)
-            .load(RetroGlideExtension.getArtistModel(artist))
-            .transition(RetroGlideExtension.getDefaultTransition())
-            .into(object : RetroMusicColoredTarget(holder.image!!) {
+            .load(MuseGlideExtension.getArtistModel(artist))
+            .transition(MuseGlideExtension.getDefaultTransition())
+            .into(object : MuseMusicColoredTarget(holder.image!!) {
                 override fun onColorReady(colors: MediaNotificationProcessor) {
                     setColors(colors, holder)
                 }

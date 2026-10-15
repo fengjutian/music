@@ -394,7 +394,7 @@
     <string name="reset_action">रीसेट</string>
     <string name="reset_artist_image">कलाकार छवि रीसेट करें</string>
     <string name="restore">पुनर्स्थापित करें</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">संगीत को रिंगटोन के रूप में सेट करने के लिए ऐप को आपकी डिवाइस सेटिंग्स तक पहुंचने की अनुमति की आवश्यकता है।</string>
     <string name="ringtone_title">रिंगटोन (वैकल्पिक)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

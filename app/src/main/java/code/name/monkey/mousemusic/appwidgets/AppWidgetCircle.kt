@@ -14,15 +14,15 @@ import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.activities.MainActivity
 import code.name.monkey.mousemusic.appwidgets.base.BaseAppWidget
 import code.name.monkey.mousemusic.extensions.getTintedDrawable
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
 import code.name.monkey.mousemusic.glide.palette.BitmapPaletteWrapper
 import code.name.monkey.mousemusic.service.MusicService
 import code.name.monkey.mousemusic.service.MusicService.Companion.ACTION_TOGGLE_PAUSE
 import code.name.monkey.mousemusic.service.MusicService.Companion.TOGGLE_FAVORITE
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.CustomTarget
@@ -87,7 +87,7 @@ class AppWidgetCircle : BaseAppWidget() {
             linkButtons(service, appWidgetView)
 
             if (imageSize == 0) {
-                val p = RetroUtil.getScreenSize(service)
+                val p = MuseUtil.getScreenSize(service)
                 imageSize = p.x.coerceAtMost(p.y)
             }
 
@@ -99,7 +99,7 @@ class AppWidgetCircle : BaseAppWidget() {
                 target = Glide.with(service)
                     .asBitmapPalette()
                     .songCoverOptions(song)
-                    .load(RetroGlideExtension.getSongModel(song))
+                    .load(MuseGlideExtension.getSongModel(song))
                     .apply(RequestOptions.circleCropTransform())
                     .into(object : CustomTarget<BitmapPaletteWrapper>(imageSize, imageSize) {
                         override fun onResourceReady(

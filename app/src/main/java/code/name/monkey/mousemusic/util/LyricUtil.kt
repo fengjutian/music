@@ -12,7 +12,7 @@ import java.io.*
  */
 object LyricUtil {
     private val lrcRootPath =
-        getExternalStorageDirectory().toString() + "/RetroMusic/lyrics/"
+        getExternalStorageDirectory().toString() + "/MuseMusic/lyrics/"
     private const val TAG = "LyricUtil"
     fun writeLrcToLoc(
         title: String, artist: String, lrcContext: String
@@ -38,7 +38,7 @@ object LyricUtil {
         }
     }
 
-    //So in Retro, Lrc file can be same folder as Music File or in RetroMusic Folder
+    //So in Muse, Lrc file can be same folder as Music File or in MuseMusic Folder
     // In this case we pass location of the file and Contents to write to file
     fun writeLrc(song: Song, lrcContext: String) {
         var writer: FileWriter? = null

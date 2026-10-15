@@ -15,13 +15,13 @@ import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.activities.MainActivity
 import code.name.monkey.mousemusic.appwidgets.base.BaseAppWidget
 import code.name.monkey.mousemusic.extensions.getTintedDrawable
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
 import code.name.monkey.mousemusic.service.MusicService
 import code.name.monkey.mousemusic.service.MusicService.Companion.ACTION_REWIND
 import code.name.monkey.mousemusic.service.MusicService.Companion.ACTION_SKIP
 import code.name.monkey.mousemusic.service.MusicService.Companion.ACTION_TOGGLE_PAUSE
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.target.Target
@@ -130,7 +130,7 @@ class AppWidgetBig : BaseAppWidget() {
         linkButtons(service, appWidgetView)
 
         // Load the album cover async and push the update on completion
-        val p = RetroUtil.getScreenSize(service)
+        val p = MuseUtil.getScreenSize(service)
         val widgetImageSize = p.x.coerceAtMost(p.y)
         val appContext = service.applicationContext
         service.runOnUiThread {
@@ -140,7 +140,7 @@ class AppWidgetBig : BaseAppWidget() {
             target = Glide.with(appContext)
                 .asBitmap()
                 //.checkIgnoreMediaStore()
-                .load(RetroGlideExtension.getSongModel(song))
+                .load(MuseGlideExtension.getSongModel(song))
                 .into(object : CustomTarget<Bitmap>(widgetImageSize, widgetImageSize) {
                     override fun onResourceReady(
                         resource: Bitmap,

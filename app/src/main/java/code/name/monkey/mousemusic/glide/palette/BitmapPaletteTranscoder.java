@@ -8,7 +8,7 @@ import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.engine.Resource;
 import com.bumptech.glide.load.resource.transcode.ResourceTranscoder;
 
-import code.name.monkey.mousemusic.util.RetroColorUtil;
+import code.name.monkey.mousemusic.util.MuseColorUtil;
 
 public class BitmapPaletteTranscoder implements ResourceTranscoder<Bitmap,  BitmapPaletteWrapper> {
 
@@ -16,7 +16,7 @@ public class BitmapPaletteTranscoder implements ResourceTranscoder<Bitmap,  Bitm
   public Resource<BitmapPaletteWrapper> transcode(@NonNull Resource<Bitmap> toTranscode, @NonNull Options options) {
     Bitmap bitmap = toTranscode.get();
     BitmapPaletteWrapper bitmapPaletteWrapper =
-            new BitmapPaletteWrapper(bitmap, RetroColorUtil.generatePalette(bitmap));
+            new BitmapPaletteWrapper(bitmap, MuseColorUtil.generatePalette(bitmap));
     return new BitmapPaletteResource(bitmapPaletteWrapper);
   }
 }

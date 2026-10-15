@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="RetroShapeableImageView">
-        <attr name="retroCornerSize" format="dimension" />
+    <declare-styleable name="MuseShapeableImageView">
+        <attr name="museCornerSize" format="dimension" />
         <attr name="circleShape" format="boolean" />
     </declare-styleable>
 </resources>

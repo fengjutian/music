@@ -37,13 +37,13 @@ class AboutFragment : Fragment(R.layout.fragment_about), View.OnClickListener {
     }
 
     private fun setUpView() {
-        binding.aboutContent.cardRetroInfo.appGithub.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.faqLink.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.appRate.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.appTranslation.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.appShare.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.donateLink.setOnClickListener(this)
-        binding.aboutContent.cardRetroInfo.bugReportLink.setOnClickListener(this)
+        binding.aboutContent.cardMuseInfo.appGithub.setOnClickListener(this)
+        binding.aboutContent.cardMuseInfo.faqLink.setOnClickListener(this)
+        binding.aboutContent.cardMuseInfo.appRate.setOnClickListener(this)
+        binding.aboutContent.cardMuseInfo.appTranslation.setOnClickListener(this)
+        binding.aboutContent.cardMuseInfo.appShare.setOnClickListener(this)
+        binding.aboutContent.cardMuseInfo.donateLink.setOnClickListener(this)
+        binding.aboutContent.cardMuseInfo.bugReportLink.setOnClickListener(this)
 
         binding.aboutContent.cardSocial.telegramLink.setOnClickListener(this)
         binding.aboutContent.cardSocial.twitterLink.setOnClickListener(this)

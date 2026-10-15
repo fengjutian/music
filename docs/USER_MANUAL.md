@@ -82,7 +82,7 @@ LRC 文件使用 UTF-8 编码。内容示例：
 同步歌词也可以放在：
 
 ```text
-内部存储/RetroMusic/lyrics/
+内部存储/MuseMusic/lyrics/
 ```
 
 文件名必须使用以下格式：
@@ -94,7 +94,7 @@ LRC 文件使用 UTF-8 编码。内容示例：
 例如：
 
 ```text
-内部存储/RetroMusic/lyrics/晴天 - 周杰伦.lrc
+内部存储/MuseMusic/lyrics/晴天 - 周杰伦.lrc
 ```
 
 这里的歌曲标题和艺术家名称应与音频文件标签中记录的信息一致。
