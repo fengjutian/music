@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
+    android:layout_height="@dimen/mini_player_height"
+    android:background="@drawable/netease_mini_player_background"
     android:clickable="true"
     android:focusable="true"
     android:orientation="horizontal"
-    android:paddingStart="8dp"
-    android:paddingEnd="0dp">
+    android:paddingStart="4dp"
+    android:paddingEnd="8dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/imageTextContainer"
@@ -16,15 +17,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="8dp"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/drag_view"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
             android:scaleType="centerCrop"
@@ -37,7 +39,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="12dp"
         android:layout_weight="1"
         android:ellipsize="marquee"
         android:focusable="true"
@@ -47,7 +49,7 @@
         android:marqueeRepeatLimit="marquee_forever"
         android:scrollHorizontally="true"
         android:singleLine="true"
-        android:textAppearance="@style/TextViewNormal"
+        android:textAppearance="@style/TextViewBody2"
         android:textColor="?android:attr/textColorPrimary"
         tools:text="@tools:sample/lorem/random" />
 
@@ -59,7 +61,8 @@
         android:background="?roundSelector"
         android:padding="6dp"
         app:srcCompat="@drawable/ic_skip_previous"
-        app:tint="?attr/colorControlNormal" />
+        app:tint="?attr/colorControlNormal"
+        android:visibility="gone" />
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -82,7 +85,7 @@
             android:background="?roundSelector"
             android:scaleType="center"
             app:srcCompat="@drawable/ic_pause"
-            app:tint="?attr/colorControlNormal"
+            app:tint="@color/netease_brand"
             tools:ignore="ContentDescription" />
     </FrameLayout>
 
@@ -94,5 +97,6 @@
         android:background="?roundSelector"
         android:padding="6dp"
         app:srcCompat="@drawable/ic_skip_next"
-        app:tint="?attr/colorControlNormal" />
+        app:tint="?attr/colorControlNormal"
+        android:visibility="gone" />
 </LinearLayout>
