@@ -23,8 +23,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:padding="16dp"
-            android:textAppearance="@style/TextViewHeadline6"
+            android:paddingStart="16dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="12dp"
+            android:textAppearance="@style/TextViewHeadline5"
             android:textStyle="bold"
             tools:text="@tools:sample/full_names" />
 
@@ -32,7 +35,10 @@
             android:id="@+id/arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:paddingStart="8dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
             app:srcCompat="@drawable/ic_arrow_forward" />
     </LinearLayout>
 

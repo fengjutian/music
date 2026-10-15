@@ -31,10 +31,10 @@ import code.name.monkey.mousemusic.dialogs.AddToPlaylistDialog
 import code.name.monkey.mousemusic.dialogs.DeleteSongsDialog
 import code.name.monkey.mousemusic.extensions.*
 import code.name.monkey.mousemusic.fragments.base.AbsMainActivityFragment
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.albumCoverOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.artistImageOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.albumCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.artistImageOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
 import code.name.monkey.mousemusic.glide.SingleColorTarget
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.SortOrder.AlbumSongSortOrder.Companion.SONG_A_Z
@@ -265,9 +265,9 @@ class AlbumDetailsFragment : AbsMainActivityFragment(R.layout.fragment_album_det
                 binding.fragmentAlbumContent.scrobblesLabel.show()
 
                 binding.fragmentAlbumContent.listeners.text =
-                    RetroUtil.formatValue(lastFmAlbum.album.listeners.toFloat())
+                    MuseUtil.formatValue(lastFmAlbum.album.listeners.toFloat())
                 binding.fragmentAlbumContent.scrobbles.text =
-                    RetroUtil.formatValue(lastFmAlbum.album.playcount.toFloat())
+                    MuseUtil.formatValue(lastFmAlbum.album.playcount.toFloat())
             }
         }
     }
@@ -279,7 +279,7 @@ class AlbumDetailsFragment : AbsMainActivityFragment(R.layout.fragment_album_det
         Glide.with(requireContext())
             //.forceDownload(PreferenceUtil.isAllowedToDownloadMetadata())
             .load(
-                RetroGlideExtension.getArtistModel(
+                MuseGlideExtension.getArtistModel(
                     artist,
                     PreferenceUtil.isAllowedToDownloadMetadata(requireContext())
                 )
@@ -295,7 +295,7 @@ class AlbumDetailsFragment : AbsMainActivityFragment(R.layout.fragment_album_det
             .asBitmapPalette()
             .albumCoverOptions(album.safeGetFirstSong())
             //.checkIgnoreMediaStore()
-            .load(RetroGlideExtension.getSongModel(album.safeGetFirstSong()))
+            .load(MuseGlideExtension.getSongModel(album.safeGetFirstSong()))
             .into(object : SingleColorTarget(binding.image) {
                 override fun onColorReady(color: Int) {
                     setColors(color)

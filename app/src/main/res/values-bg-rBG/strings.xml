@@ -395,7 +395,7 @@
     <string name="reset_action">Нулиране</string>
     <string name="reset_artist_image">Нулирайте изображението на изпълнителя</string>
     <string name="restore">Възстанови</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Приложението се нуждае от разрешение за достъп до настройките на вашето устройство, за да зададе музика като ваш тон на звънене</string>
     <string name="ringtone_title">Мелодия (по избор)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

@@ -17,13 +17,13 @@ import code.name.monkey.appthemehelper.util.MaterialValueHelper
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.databinding.ActivitySongTagEditorBinding
 import code.name.monkey.mousemusic.extensions.*
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
 import code.name.monkey.mousemusic.glide.palette.BitmapPaletteWrapper
 import code.name.monkey.mousemusic.model.ArtworkInfo
 import code.name.monkey.mousemusic.repository.SongRepository
 import code.name.monkey.mousemusic.util.ImageUtil
 import code.name.monkey.mousemusic.util.MusicUtil
-import code.name.monkey.mousemusic.util.RetroColorUtil
+import code.name.monkey.mousemusic.util.MuseColorUtil
 import code.name.monkey.mousemusic.util.logD
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -97,8 +97,8 @@ class SongTagEditorActivity : AbsTagEditorActivity<ActivitySongTagEditorBinding>
         val bitmap = albumArt
         setImageBitmap(
             bitmap,
-            RetroColorUtil.getColor(
-                RetroColorUtil.generatePalette(bitmap),
+            MuseColorUtil.getColor(
+                MuseColorUtil.generatePalette(bitmap),
                 defaultFooterColor()
             )
         )
@@ -167,11 +167,11 @@ class SongTagEditorActivity : AbsTagEditorActivity<ActivitySongTagEditorBinding>
                     resource: BitmapPaletteWrapper,
                     transition: Transition<in BitmapPaletteWrapper>?
                 ) {
-                    RetroColorUtil.getColor(resource.palette, Color.TRANSPARENT)
+                    MuseColorUtil.getColor(resource.palette, Color.TRANSPARENT)
                     albumArtBitmap = resource.bitmap?.let { ImageUtil.resizeBitmap(it, 2048) }
                     setImageBitmap(
                         albumArtBitmap,
-                        RetroColorUtil.getColor(
+                        MuseColorUtil.getColor(
                             resource.palette,
                             defaultFooterColor()
                         )

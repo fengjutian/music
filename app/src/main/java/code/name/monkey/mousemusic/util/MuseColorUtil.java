@@ -22,7 +22,7 @@ import code.name.monkey.appthemehelper.ThemeStore;
 import code.name.monkey.appthemehelper.util.ColorUtil;
 import code.name.monkey.appthemehelper.util.VersionUtils;
 
-public class RetroColorUtil {
+public class MuseColorUtil {
   public static int desaturateColor(int color, float ratio) {
     float[] hsv = new float[3];
     Color.colorToHSV(color, hsv);

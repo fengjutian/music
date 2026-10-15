@@ -393,7 +393,7 @@
     <string name="reset_action">リセット</string>
     <string name="reset_artist_image">アーティスト画像をリセット</string>
     <string name="restore">復元</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">音楽を着信音に設定するには、端末の設定にアクセスする権限が必要です</string>
     <string name="ringtone_title">着信音（オプション）</string>
     <string name="permission_alarm_summary">スリープタイマーを設定するには、アプリに正確なアラームをスケジュールする許可が必要です</string>

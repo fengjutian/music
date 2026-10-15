@@ -17,8 +17,8 @@ import code.name.monkey.mousemusic.fragments.base.AbsPlayerFragment
 import code.name.monkey.mousemusic.fragments.player.PlayerAlbumCoverFragment
 import code.name.monkey.mousemusic.fragments.player.normal.PlayerFragment
 import code.name.monkey.mousemusic.glide.BlurTransformation
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.simpleSongCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.simpleSongCoverOptions
 import code.name.monkey.mousemusic.glide.crossfadeListener
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.model.Song
@@ -125,7 +125,7 @@ class CardBlurFragment : AbsPlayerFragment(R.layout.fragment_card_blur_player),
     private fun updateBlur() {
         // https://github.com/bumptech/glide/issues/527#issuecomment-148840717
         Glide.with(this)
-            .load(RetroGlideExtension.getSongModel(MusicPlayerRemote.currentSong))
+            .load(MuseGlideExtension.getSongModel(MusicPlayerRemote.currentSong))
             .simpleSongCoverOptions(MusicPlayerRemote.currentSong)
             .transform(
                 BlurTransformation.Builder(requireContext()).blurRadius(blurAmount.toFloat())

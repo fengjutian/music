@@ -395,7 +395,7 @@
     <string name="reset_action">ಮರುಹೊಂದಿಸಿ</string>
     <string name="reset_artist_image">ಕಲಾವಿದರ ಚಿತ್ರವನ್ನು ಮರುಹೊಂದಿಸಿ</string>
     <string name="restore">ಪುನಸ್ಥಾಪಿಸಿ</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">ಸಂಗೀತವನ್ನು ರಿಂಗ್‌ಟೋನ್‌ನಂತೆ ಹೊಂದಿಸಲು ನಿಮ್ಮ ಸಾಧನದ ಸಂಯೋಜನೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ಅಪ್ಲಿಕೇಶನ್‌ಗೆ ಅನುಮತಿಯ ಅಗತ್ಯವಿದೆ</string>
     <string name="ringtone_title">ರಿಂಗ್‌ಟೋನ್‌ (ಐಚ್ಛಿಕ)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

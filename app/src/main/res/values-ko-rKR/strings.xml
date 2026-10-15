@@ -392,7 +392,7 @@
     <string name="reset_action">Reset</string>
     <string name="reset_artist_image">아티스트 이미지 초기화</string>
     <string name="restore">복원</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">The app needs permission to access your device settings in order to set music as Ringtone</string>
     <string name="ringtone_title">Ringtone (Optional)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

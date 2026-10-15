@@ -394,7 +394,7 @@
     <string name="reset_action">Réinitialiser</string>
     <string name="reset_artist_image">Réinitialiser la photo de l\'artiste</string>
     <string name="restore">Restaurer</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">L\'application a besoin d\'accéder au stockage de votre appareil pour configurer un morceau comme sonnerie</string>
     <string name="ringtone_title">Sonnerie (facultatif)</string>
     <string name="permission_alarm_summary">L\'application a besoin d\'une autorisation pour programmer des alarmes exactes afin de définir des minuteries de sommeil.</string>

@@ -17,8 +17,8 @@ import androidx.media.app.NotificationCompat.MediaStyle
 import code.name.monkey.appthemehelper.util.VersionUtils
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.activities.MainActivity
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
 import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.service.MusicService
 import code.name.monkey.mousemusic.service.MusicService.Companion.ACTION_QUIT
@@ -115,7 +115,7 @@ class PlayingNotification(
         currentTarget = Glide.with(context)
             .asBitmap()
             .songCoverOptions(song)
-            .load(RetroGlideExtension.getSongModel(song))
+            .load(MuseGlideExtension.getSongModel(song))
             //.checkIgnoreMediaStore()
             .centerCrop()
             .into(object : CustomTarget<Bitmap>(

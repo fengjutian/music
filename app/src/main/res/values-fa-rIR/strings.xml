@@ -394,7 +394,7 @@
     <string name="reset_action">بازنشانی</string>
     <string name="reset_artist_image">تنظیم مجدد تصویر هنرمند</string>
     <string name="restore">بازیابی</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">برنامه برای دسترسی به تنظیمات دستگاه شما برای تنظیم موسیقی به عنوان آهنگ زنگ نیاز به مجوز دارد</string>
     <string name="ringtone_title">آهنگ زنگ (اختیاری)</string>
     <string name="permission_alarm_summary">این برنامه برای تنظیم تایمر خواب نیازمند دسترسی به برنامه‌ریزی آلارم دارد</string>

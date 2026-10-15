@@ -398,7 +398,7 @@
     <string name="reset_action">Скинути</string>
     <string name="reset_artist_image">Скинути зображення виконавця</string>
     <string name="restore">Відновити</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Застосунку потрібен дозвіл на доступ до налаштувань вашого пристрою для того, щоб встановити музику як рингтон</string>
     <string name="ringtone_title">Мелодія (Необов\'язково)</string>
     <string name="permission_alarm_summary">Застосунку потрібен дозвіл на планування точних будильників для встановлення таймерів сну</string>

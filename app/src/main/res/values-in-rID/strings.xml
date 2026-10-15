@@ -392,7 +392,7 @@
     <string name="reset_action">Setel ulang</string>
     <string name="reset_artist_image">Muat ulang gambar artis</string>
     <string name="restore">Pulihkan</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Aplikasi memerlukan izin untuk mengakses setelan perangkat Anda untuk mengatur musik sebagai Nada Dering</string>
     <string name="ringtone_title">Nada Dering (Opsional)</string>
     <string name="permission_alarm_summary">Aplikasi membutuhkan izin untuk menjadwalkan alarm yang tepat untuk mengatur waktu tidur</string>

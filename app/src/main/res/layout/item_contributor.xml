@@ -12,7 +12,7 @@
     android:paddingEnd="12dp"
     tools:ignore="PrivateResource">
 
-    <code.name.monkey.mousemusic.views.RetroShapeableImageView
+    <code.name.monkey.mousemusic.views.MuseShapeableImageView
         android:id="@+id/icon"
         android:layout_width="42dp"
         android:layout_height="42dp"
@@ -22,7 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:retroCornerSize="21dp"
+        app:museCornerSize="21dp"
         app:srcCompat="@drawable/ic_account"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 

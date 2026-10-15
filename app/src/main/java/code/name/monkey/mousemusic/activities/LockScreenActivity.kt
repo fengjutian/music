@@ -12,10 +12,10 @@ import code.name.monkey.mousemusic.extensions.hideStatusBar
 import code.name.monkey.mousemusic.extensions.setTaskDescriptionColorAuto
 import code.name.monkey.mousemusic.extensions.whichFragment
 import code.name.monkey.mousemusic.fragments.player.lockscreen.LockScreenControlsFragment
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.util.color.MediaNotificationProcessor
 import com.bumptech.glide.Glide
@@ -96,9 +96,9 @@ class LockScreenActivity : AbsMusicServiceActivity() {
         Glide.with(this)
             .asBitmapPalette()
             .songCoverOptions(song)
-            .load(RetroGlideExtension.getSongModel(song))
+            .load(MuseGlideExtension.getSongModel(song))
             .dontAnimate()
-            .into(object : RetroMusicColoredTarget(binding.image) {
+            .into(object : MuseMusicColoredTarget(binding.image) {
                 override fun onColorReady(colors: MediaNotificationProcessor) {
                     fragment?.setColor(colors)
                 }

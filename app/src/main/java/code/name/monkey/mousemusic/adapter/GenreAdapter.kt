@@ -9,10 +9,10 @@ import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.databinding.ItemGenreBinding
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.interfaces.IGenreClickListener
 import code.name.monkey.mousemusic.model.Genre
 import code.name.monkey.mousemusic.util.MusicUtil
@@ -59,8 +59,8 @@ class GenreAdapter(
         Glide.with(activity)
             .asBitmapPalette()
             .songCoverOptions(genreSong)
-            .load(RetroGlideExtension.getSongModel(genreSong))
-            .into(object : RetroMusicColoredTarget(holder.binding.image) {
+            .load(MuseGlideExtension.getSongModel(genreSong))
+            .into(object : MuseMusicColoredTarget(holder.binding.image) {
                 override fun onColorReady(colors: MediaNotificationProcessor) {
                     setColors(holder, colors)
                 }

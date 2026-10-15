@@ -28,9 +28,9 @@ import code.name.monkey.mousemusic.databinding.FragmentArtistDetailsBinding
 import code.name.monkey.mousemusic.dialogs.AddToPlaylistDialog
 import code.name.monkey.mousemusic.extensions.*
 import code.name.monkey.mousemusic.fragments.base.AbsMainActivityFragment
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.artistImageOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.artistImageOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
 import code.name.monkey.mousemusic.glide.SingleColorTarget
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.SortOrder
@@ -190,9 +190,9 @@ abstract class AbsArtistDetailsFragment : AbsMainActivityFragment(R.layout.fragm
                         scrobbles.show()
                         scrobblesLabel.show()
                         listeners.text =
-                            RetroUtil.formatValue(lastFmArtist.artist.stats.listeners.toFloat())
+                            MuseUtil.formatValue(lastFmArtist.artist.stats.listeners.toFloat())
                         scrobbles.text =
-                            RetroUtil.formatValue(lastFmArtist.artist.stats.playcount.toFloat())
+                            MuseUtil.formatValue(lastFmArtist.artist.stats.playcount.toFloat())
                     }
                 }
             }
@@ -206,7 +206,7 @@ abstract class AbsArtistDetailsFragment : AbsMainActivityFragment(R.layout.fragm
 
     private fun loadArtistImage(artist: Artist) {
         Glide.with(requireContext()).asBitmapPalette().artistImageOptions(artist)
-            .load(RetroGlideExtension.getArtistModel(artist)).dontAnimate()
+            .load(MuseGlideExtension.getArtistModel(artist)).dontAnimate()
             .into(object : SingleColorTarget(binding.image) {
                 override fun onColorReady(color: Int) {
                     setColors(color)

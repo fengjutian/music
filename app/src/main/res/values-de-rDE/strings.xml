@@ -394,7 +394,7 @@
     <string name="reset_action">Zurücksetzen</string>
     <string name="reset_artist_image">Interpreten-Bild zurücksetzen</string>
     <string name="restore">Wiederherstellen</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Die App benötigt die Berechtigung zum Ändern von Systemeinstellungen, um Musik als Klingelton festlegen zu können</string>
     <string name="ringtone_title">Klingelton (optional)</string>
     <string name="permission_alarm_summary">Die App benötigt für den Einschlafmodus die Berechtigung, einen genauen Wecker zu stellen</string>

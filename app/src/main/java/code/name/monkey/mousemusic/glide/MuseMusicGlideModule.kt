@@ -17,7 +17,7 @@ import com.bumptech.glide.module.AppGlideModule
 import java.io.InputStream
 
 @GlideModule
-class RetroMusicGlideModule : AppGlideModule() {
+class MuseMusicGlideModule : AppGlideModule() {
     override fun registerComponents(context: Context, glide: Glide, registry: Registry) {
         registry.prepend(
             PlaylistPreview::class.java,

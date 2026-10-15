@@ -12,7 +12,7 @@ import code.name.monkey.appthemehelper.util.ATHUtil
 import code.name.monkey.appthemehelper.util.ColorUtil
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroColorUtil
+import code.name.monkey.mousemusic.util.MuseColorUtil
 import com.google.android.material.color.MaterialColors
 
 
@@ -34,7 +34,7 @@ class ColorIconsImageView @JvmOverloads constructor(
     fun setIconBackgroundColor(color: Int) {
         background = ContextCompat.getDrawable(context, R.drawable.color_circle_gradient)
         if (ATHUtil.isWindowBackgroundDark(context) && PreferenceUtil.isDesaturatedColor) {
-            val desaturatedColor = RetroColorUtil.desaturateColor(color, 0.4f)
+            val desaturatedColor = MuseColorUtil.desaturateColor(color, 0.4f)
             backgroundTintList = ColorStateList.valueOf(desaturatedColor)
             imageTintList =
                 ColorStateList.valueOf(ATHUtil.resolveColor(context, com.google.android.material.R.attr.colorSurface))

@@ -16,8 +16,8 @@ import code.name.monkey.mousemusic.fragments.base.AbsPlayerFragment
 import code.name.monkey.mousemusic.fragments.base.goToArtist
 import code.name.monkey.mousemusic.fragments.player.CoverLyricsFragment
 import code.name.monkey.mousemusic.fragments.player.PlayerAlbumCoverFragment
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.artistImageOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.artistImageOptions
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.util.color.MediaNotificationProcessor
@@ -119,7 +119,7 @@ class FullPlayerFragment : AbsPlayerFragment(R.layout.fragment_full) {
             .observe(viewLifecycleOwner) { artist ->
                 if (artist.id != -1L) {
                     Glide.with(requireActivity())
-                        .load(RetroGlideExtension.getArtistModel(artist))
+                        .load(MuseGlideExtension.getArtistModel(artist))
                         .artistImageOptions(artist)
                         .into(binding.artistImage)
                 }

@@ -48,8 +48,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:background="@drawable/apple_glass_panel"
+        android:elevation="8dp"
         android:minHeight="@dimen/bottom_nav_height"
         app:itemHorizontalTranslationEnabled="false"
+        app:itemActiveIndicatorStyle="@style/NeteaseActiveIndicatorStyle"
+        app:itemIconSize="22dp"
+        app:itemPaddingBottom="6dp"
+        app:itemPaddingTop="6dp"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navigation_main"
         tools:viewBindingType="com.google.android.material.navigation.NavigationBarView"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

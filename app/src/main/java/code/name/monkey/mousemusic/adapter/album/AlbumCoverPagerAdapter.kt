@@ -15,10 +15,10 @@ import code.name.monkey.mousemusic.activities.MainActivity
 import code.name.monkey.mousemusic.fragments.AlbumCoverStyle
 import code.name.monkey.mousemusic.fragments.NowPlayingScreen.*
 import code.name.monkey.mousemusic.fragments.base.goToLyrics
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.misc.CustomFragmentStatePagerAdapter
 import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.util.MusicUtil
@@ -167,9 +167,9 @@ class AlbumCoverPagerAdapter(
                 .asBitmapPalette()
                 .songCoverOptions(song)
                 //.checkIgnoreMediaStore()
-                .load(RetroGlideExtension.getSongModel(song))
+                .load(MuseGlideExtension.getSongModel(song))
                 .dontAnimate()
-                .into(object : RetroMusicColoredTarget(albumCover) {
+                .into(object : MuseMusicColoredTarget(albumCover) {
                     override fun onColorReady(colors: MediaNotificationProcessor) {
                         setColor(colors)
                     }

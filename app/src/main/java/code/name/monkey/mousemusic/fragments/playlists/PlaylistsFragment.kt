@@ -16,7 +16,7 @@ import code.name.monkey.mousemusic.fragments.base.AbsRecyclerViewCustomGridSizeF
 import code.name.monkey.mousemusic.helper.SortOrder.PlaylistSortOrder
 import code.name.monkey.mousemusic.interfaces.IPlaylistClickListener
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import com.google.android.material.transition.MaterialSharedAxis
 
 class PlaylistsFragment :
@@ -59,7 +59,7 @@ class PlaylistsFragment :
     override fun onCreateMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateMenu(menu, inflater)
         val gridSizeItem: MenuItem = menu.findItem(R.id.action_grid_size)
-        if (RetroUtil.isLandscape) {
+        if (MuseUtil.isLandscape) {
             gridSizeItem.setTitle(R.string.action_grid_size_land)
         }
         setupGridSizeMenu(gridSizeItem.subMenu!!)
@@ -94,7 +94,7 @@ class PlaylistsFragment :
             7 -> gridSizeMenu.findItem(R.id.action_grid_size_7).isChecked = true
             8 -> gridSizeMenu.findItem(R.id.action_grid_size_8).isChecked = true
         }
-        val gridSize = if (RetroUtil.isLandscape) 4 else 3
+        val gridSize = if (MuseUtil.isLandscape) 4 else 3
         if (gridSize < 8) {
             gridSizeMenu.findItem(R.id.action_grid_size_8).isVisible = false
         }

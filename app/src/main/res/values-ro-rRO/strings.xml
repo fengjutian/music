@@ -396,7 +396,7 @@
     <string name="reset_action">Resetare</string>
     <string name="reset_artist_image">Reseteţi imaginea artistului</string>
     <string name="restore">Restabilire</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Aplicația are nevoie de permisiunea de a accesa setările dispozitivului pentru a seta muzica ca ton de apel</string>
     <string name="ringtone_title">Ton sonerie (opțional)</string>
     <string name="permission_alarm_summary">Aplicația are nevoie de permisiunea de a programa alarmele exacte pentru a seta temporizatoarele de somn</string>

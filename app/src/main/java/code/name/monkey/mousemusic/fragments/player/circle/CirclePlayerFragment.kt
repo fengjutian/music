@@ -24,8 +24,8 @@ import code.name.monkey.mousemusic.fragments.MusicSeekSkipTouchListener
 import code.name.monkey.mousemusic.fragments.base.AbsPlayerFragment
 import code.name.monkey.mousemusic.fragments.base.goToAlbum
 import code.name.monkey.mousemusic.fragments.base.goToArtist
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.simpleSongCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.simpleSongCoverOptions
 import code.name.monkey.mousemusic.glide.crossfadeListener
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.MusicProgressViewUpdateHelper
@@ -226,7 +226,7 @@ class CirclePlayerFragment : AbsPlayerFragment(R.layout.fragment_circle_player),
             binding.songInfo.hide()
         }
         Glide.with(this)
-            .load(RetroGlideExtension.getSongModel(MusicPlayerRemote.currentSong))
+            .load(MuseGlideExtension.getSongModel(MusicPlayerRemote.currentSong))
             .simpleSongCoverOptions(MusicPlayerRemote.currentSong)
             .thumbnail(lastRequest)
             .error(Glide.with(this).load(R.drawable.default_audio_art).fitCenter())

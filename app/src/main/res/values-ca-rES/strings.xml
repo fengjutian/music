@@ -394,7 +394,7 @@
     <string name="reset_action">Restablir</string>
     <string name="reset_artist_image">Restableix la imatge de l\'artista</string>
     <string name="restore">Restaurar</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">L\'aplicació necessita permís per accedir a la configuració del dispositiu per configurar la música com a to de trucada</string>
     <string name="ringtone_title">To de trucada (Opcional)</string>
     <string name="permission_alarm_summary">Cal permís per posar alarmes exactes per configurar temporitzadors d\'aturada</string>

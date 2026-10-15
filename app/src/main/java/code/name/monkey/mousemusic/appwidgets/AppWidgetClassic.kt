@@ -16,9 +16,9 @@ import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.activities.MainActivity
 import code.name.monkey.mousemusic.appwidgets.base.BaseAppWidget
 import code.name.monkey.mousemusic.extensions.getTintedDrawable
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
 import code.name.monkey.mousemusic.glide.palette.BitmapPaletteWrapper
 import code.name.monkey.mousemusic.service.MusicService
 import code.name.monkey.mousemusic.service.MusicService.Companion.ACTION_REWIND
@@ -109,7 +109,7 @@ class AppWidgetClassic : BaseAppWidget() {
             target = Glide.with(service)
                 .asBitmapPalette()
                 .songCoverOptions(song)
-                .load(RetroGlideExtension.getSongModel(song))
+                .load(MuseGlideExtension.getSongModel(song))
                 //.checkIgnoreMediaStore()
                 .centerCrop()
                 .into(object : CustomTarget<BitmapPaletteWrapper>(imageSize, imageSize) {

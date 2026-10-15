@@ -30,7 +30,7 @@ Guidance for coding agents working in this repository.
 - `App.kt` owns app startup, Koin startup, billing, crash handling, shortcuts, wallpaper accent setup, and default preferences.
 - `MainModule.kt` is the dependency injection map. Add new repositories, services, and ViewModels there instead of constructing them ad hoc in UI code.
 - `Repository` and `RealRepository` are the app-level data facade. Prefer repository/ViewModel changes over direct data access from fragments or adapters.
-- Room state is in `RetroDatabase` and related DAOs/entities under `db/`. If a schema changes, add a real migration and wire it into `Room.databaseBuilder(...).addMigrations(...)`.
+- Room state is in `MuseDatabase` and related DAOs/entities under `db/`. If a schema changes, add a real migration and wire it into `Room.databaseBuilder(...).addMigrations(...)`.
 - MediaStore, Room, tag editing, backup/restore, image decoding, and playlist operations must stay off the main thread. Prefer `viewModelScope` or lifecycle-aware scopes with `Dispatchers.IO`.
 - Avoid unowned background work from adapters, dialogs, or menu helpers. If existing code uses it, keep new work tighter and lifecycle-aware.
 - Keep UI state in ViewModels where possible. Fragments should coordinate views, navigation, and observers rather than becoming data/business logic owners.
@@ -48,7 +48,7 @@ Guidance for coding agents working in this repository.
 
 - Treat `MusicPlayerRemote`, `service/`, player fragments, widgets, Android Auto, notifications, and Cast as hot paths.
 - Do not block playback or service callbacks with disk, network, MediaStore, Room, or artwork work.
-- Use the existing Glide integration and `RetroGlideExtension` patterns for album art, artist art, palettes, widgets, and notifications.
+- Use the existing Glide integration and `MuseGlideExtension` patterns for album art, artist art, palettes, widgets, and notifications.
 - Clear or replace long-lived Glide targets when updating widgets/notifications to avoid leaking stale targets.
 - Be cautious with large libraries: avoid repeated full-list sorting/filtering on the main thread and avoid decoding large artwork directly in render paths.
 - Do not add music downloading or streaming behavior; the app is a local music player.
@@ -58,7 +58,7 @@ Guidance for coding agents working in this repository.
 - Keep dependency versions in `gradle/libs.versions.toml`.
 - Use KSP-backed processors already configured for Room and Glide.
 - Do not edit generated outputs, `.gradle/`, build folders, IDE metadata, or signing/local property files.
-- Do not commit secrets such as `retro.properties`, `public.properties`, keystores, or API keys.
+- Do not commit secrets such as `muse.properties`, `public.properties`, keystores, or API keys.
 
 ## Change Hygiene
 

@@ -12,7 +12,7 @@ import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.adapter.base.AbsMultiSelectAdapter
 import code.name.monkey.mousemusic.adapter.base.MediaEntryViewHolder
 import code.name.monkey.mousemusic.extensions.getTintedDrawable
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
 import code.name.monkey.mousemusic.glide.audiocover.AudioFileCover
 import code.name.monkey.mousemusic.interfaces.ICallbacks
 import code.name.monkey.mousemusic.util.MusicUtil
@@ -100,7 +100,7 @@ class SongFileAdapter(
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .error(error)
                 .placeholder(error)
-                .transition(RetroGlideExtension.getDefaultTransition())
+                .transition(MuseGlideExtension.getDefaultTransition())
                 .signature(MediaStoreSignature("", file.lastModified(), 0))
                 .into(holder.image!!)
         }

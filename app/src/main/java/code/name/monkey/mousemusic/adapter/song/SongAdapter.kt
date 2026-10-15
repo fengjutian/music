@@ -19,10 +19,10 @@ import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.adapter.base.AbsMultiSelectAdapter
 import code.name.monkey.mousemusic.adapter.base.MediaEntryViewHolder
 import code.name.monkey.mousemusic.extensions.accentColor
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.asBitmapPalette
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
-import code.name.monkey.mousemusic.glide.RetroMusicColoredTarget
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.asBitmapPalette
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseMusicColoredTarget
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.SortOrder
 import code.name.monkey.mousemusic.helper.menu.SongMenuHelper
@@ -31,7 +31,7 @@ import code.name.monkey.mousemusic.model.Song
 import code.name.monkey.mousemusic.util.ArtistSeparator
 import code.name.monkey.mousemusic.util.MusicUtil
 import code.name.monkey.mousemusic.util.PreferenceUtil
-import code.name.monkey.mousemusic.util.RetroUtil
+import code.name.monkey.mousemusic.util.MuseUtil
 import code.name.monkey.mousemusic.util.color.MediaNotificationProcessor
 import com.bumptech.glide.Glide
 import me.zhanghai.android.fastscroll.PopupTextProvider
@@ -101,20 +101,15 @@ open class SongAdapter(
             holder.text?.setTypeface(null, Typeface.BOLD)
 
         } else {
-            val outValue = TypedValue()
-            activity.theme.resolveAttribute(android.R.attr.textColorPrimary, outValue, true)
-            val normalColor = if (outValue.resourceId != 0) {
-                ContextCompat.getColor(activity, outValue.resourceId)
-            } else {
-                outValue.data
-            }
-            holder.title?.setTextColor(normalColor)
-            holder.text?.setTextColor(normalColor)
+            val primaryColor = resolveThemeColor(android.R.attr.textColorPrimary)
+            val secondaryColor = resolveThemeColor(android.R.attr.textColorSecondary)
+            holder.title?.setTextColor(primaryColor)
+            holder.text?.setTextColor(secondaryColor)
             holder.title?.setTypeface(null, Typeface.NORMAL)
             holder.text?.setTypeface(null, Typeface.NORMAL)
         }
         loadAlbumCover(song, holder)
-        val landscape = RetroUtil.isLandscape
+        val landscape = MuseUtil.isLandscape
         if ((PreferenceUtil.songGridSize > 2 && !landscape) || (PreferenceUtil.songGridSizeLand > 5 && landscape)) {
             holder.menu?.isVisible = false
         }
@@ -137,8 +132,8 @@ open class SongAdapter(
         Glide.with(activity)
             .asBitmapPalette()
             .songCoverOptions(song)
-            .load(RetroGlideExtension.getSongModel(song))
-            .into(object : RetroMusicColoredTarget(holder.image!!) {
+            .load(MuseGlideExtension.getSongModel(song))
+            .into(object : MuseMusicColoredTarget(holder.image!!) {
                 override fun onColorReady(colors: MediaNotificationProcessor) {
                     setColors(colors, holder)
                 }
@@ -155,6 +150,16 @@ open class SongAdapter(
 
     private fun getSongText2(song: Song): String {
         return song.albumName
+    }
+
+    private fun resolveThemeColor(attribute: Int): Int {
+        val value = TypedValue()
+        activity.theme.resolveAttribute(attribute, value, true)
+        return if (value.resourceId != 0) {
+            ContextCompat.getColor(activity, value.resourceId)
+        } else {
+            value.data
+        }
     }
 
     override fun getItemCount(): Int {

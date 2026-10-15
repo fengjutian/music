@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-Set-Location 'D:\github\RetroMusicPlayer'
+Set-Location 'D:\github\MuseMusic'
 
 $Apply = $args -contains '--apply'
 

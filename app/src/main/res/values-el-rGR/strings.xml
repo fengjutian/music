@@ -394,7 +394,7 @@
     <string name="reset_action">Επαναφορά</string>
     <string name="reset_artist_image">Επαναφορά εικόνας καλλιτέχνη</string>
     <string name="restore">Επαναφορά</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Η εφαρμογή χρειάζεται άδεια πρόσβασης στις ρυθμίσεις της συσκευής σας, για να ορίσει τη μουσική ως ήχο κλήσης</string>
     <string name="ringtone_title">Ήχος Κλήσης (Προαιρετικό)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

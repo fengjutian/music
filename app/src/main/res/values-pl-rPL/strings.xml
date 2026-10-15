@@ -398,7 +398,7 @@
     <string name="reset_action">Zresetuj</string>
     <string name="reset_artist_image">Zresetuj grafikę wykonawcy</string>
     <string name="restore">Przywróć</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Potrzebujemy uprawnień do ustawień Twojego urządzenia, aby ustawić utwór jako dzwonek</string>
     <string name="ringtone_title">Dzwonek (opcjonalny)</string>
     <string name="permission_alarm_summary">Aplikacja potrzebuje uprawnień do planowania alarmów, aby ustawiać wyłączniki czasowe</string>

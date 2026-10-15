@@ -394,7 +394,7 @@
     <string name="reset_action">Resetten</string>
     <string name="reset_artist_image">Reset artiest afbeelding</string>
     <string name="restore">Herstellen</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">The app needs permission to access your device settings in order to set music as Ringtone</string>
     <string name="ringtone_title">Beltoon (Optioneel)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

@@ -2,9 +2,9 @@ package code.name.monkey.mousemusic
 
 import androidx.room.Room
 import code.name.monkey.mousemusic.auto.AutoMusicProvider
-import code.name.monkey.mousemusic.cast.RetroWebServer
+import code.name.monkey.mousemusic.cast.MuseWebServer
 import code.name.monkey.mousemusic.db.MIGRATION_23_24
-import code.name.monkey.mousemusic.db.RetroDatabase
+import code.name.monkey.mousemusic.db.MuseDatabase
 import code.name.monkey.mousemusic.fragments.LibraryViewModel
 import code.name.monkey.mousemusic.fragments.albums.AlbumDetailsViewModel
 import code.name.monkey.mousemusic.fragments.artists.ArtistDetailsViewModel
@@ -40,21 +40,21 @@ val networkModule = module {
 private val roomModule = module {
 
     single {
-        Room.databaseBuilder(androidContext(), RetroDatabase::class.java, "playlist.db")
+        Room.databaseBuilder(androidContext(), MuseDatabase::class.java, "playlist.db")
             .addMigrations(MIGRATION_23_24)
             .build()
     }
 
     factory {
-        get<RetroDatabase>().playlistDao()
+        get<MuseDatabase>().playlistDao()
     }
 
     factory {
-        get<RetroDatabase>().playCountDao()
+        get<MuseDatabase>().playCountDao()
     }
 
     factory {
-        get<RetroDatabase>().historyDao()
+        get<MuseDatabase>().historyDao()
     }
 
     single {
@@ -79,7 +79,7 @@ private val mainModule = module {
         androidContext().contentResolver
     }
     single {
-        RetroWebServer(get())
+        MuseWebServer(get())
     }
 }
 private val dataModule = module {

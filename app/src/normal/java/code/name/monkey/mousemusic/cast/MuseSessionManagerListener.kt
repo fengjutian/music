@@ -3,7 +3,7 @@ package code.name.monkey.mousemusic.cast
 import com.google.android.gms.cast.framework.CastSession
 import com.google.android.gms.cast.framework.SessionManagerListener
 
-interface RetroSessionManagerListener : SessionManagerListener<CastSession> {
+interface MuseSessionManagerListener : SessionManagerListener<CastSession> {
     override fun onSessionResuming(p0: CastSession, p1: String) {}
 
     override fun onSessionStartFailed(p0: CastSession, p1: Int) {}

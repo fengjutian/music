@@ -394,7 +394,7 @@
     <string name="reset_action">Repor</string>
     <string name="reset_artist_image">Repor imagem do artista</string>
     <string name="restore">Restaurar</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Esta aplicação necessita de permissão para aceder às definições para definir músicas como toques</string>
     <string name="ringtone_title">Toque (opcional)</string>
     <string name="permission_alarm_summary">A aplicação precisa de permissão para agendar alarmes exatos para definir os temporizadores de sono</string>

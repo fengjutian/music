@@ -1,4 +1,4 @@
-# Retro Music Player 开发需求与路线图
+# MuseMusic 开发需求与路线图
 
 本文档记录当前项目后续开发建议。总体方向是优先改善稳定性、本地歌曲访问体验和现代 Android 兼容性，暂不进行 Compose 迁移或无明确收益的大规模重写。
 
@@ -19,7 +19,7 @@
 - 确认 `.git` 来自正确的远程仓库和分支。
 - 确认项目源码是否应加入初始提交。
 - 检查 `.gitignore` 是否正确生效。
-- 确保 `retro.properties`、`public.properties`、密钥库、API Key 和本地签名文件不会进入版本控制。
+- 确保 `muse.properties`、`public.properties`、密钥库、API Key 和本地签名文件不会进入版本控制。
 - 建立可用于评审和回滚的干净基线。
 
 ### 验收标准

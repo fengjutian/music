@@ -22,10 +22,10 @@ open class AbsMusicServiceFragment(@LayoutRes layout: Int) : Fragment(layout),
         navOptions {
             launchSingleTop = false
             anim {
-                enter = R.anim.retro_fragment_open_enter
-                exit = R.anim.retro_fragment_open_exit
-                popEnter = R.anim.retro_fragment_close_enter
-                popExit = R.anim.retro_fragment_close_exit
+                enter = R.anim.muse_fragment_open_enter
+                exit = R.anim.muse_fragment_open_exit
+                popEnter = R.anim.muse_fragment_close_enter
+                popExit = R.anim.muse_fragment_close_exit
             }
         }
     }

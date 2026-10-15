@@ -394,7 +394,7 @@
     <string name="reset_action">Visszaállítás</string>
     <string name="reset_artist_image">Az előadó képének visszaállítása</string>
     <string name="restore">Visszaállítás</string>
-    <string name="retro_music_player">MuseMusic</string>
+    <string name="muse_music_player">MuseMusic</string>
     <string name="ringtone_summary">Az alkalmazásnak engedélyre van szüksége a készülék beállításaihoz a zeneszám csengőhangként való beállításához</string>
     <string name="ringtone_title">Csengőhang (Opcionális)</string>
     <string name="permission_alarm_summary">The app needs permission to schedule exact alarms to set sleep timers</string>

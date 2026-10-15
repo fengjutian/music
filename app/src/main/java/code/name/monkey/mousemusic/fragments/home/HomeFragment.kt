@@ -27,10 +27,10 @@ import code.name.monkey.mousemusic.extensions.elevatedAccentColor
 import code.name.monkey.mousemusic.extensions.setUpMediaRouteButton
 import code.name.monkey.mousemusic.fragments.ReloadType
 import code.name.monkey.mousemusic.fragments.base.AbsMainActivityFragment
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.profileBannerOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.userProfileOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.profileBannerOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.userProfileOptions
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.interfaces.IScrollHelper
 import code.name.monkey.mousemusic.model.Song
@@ -154,20 +154,20 @@ class HomeFragment :
             findNavController().navigate(R.id.action_search, null, navOptions)
         }
         val hexColor = String.format("#%06X", 0xFFFFFF and accentColor())
-        val appName = "Retro <font color=$hexColor>Music</font>".parseAsHtml()
+        val appName = "Muse <font color=$hexColor>Music</font>".parseAsHtml()
         binding.appBarLayout.title = appName
     }
 
     private fun loadProfile() {
         binding.bannerImage?.let {
             Glide.with(requireContext())
-                .load(RetroGlideExtension.getBannerModel())
-                .profileBannerOptions(RetroGlideExtension.getBannerModel())
+                .load(MuseGlideExtension.getBannerModel())
+                .profileBannerOptions(MuseGlideExtension.getBannerModel())
                 .into(it)
         }
         Glide.with(requireActivity())
-            .load(RetroGlideExtension.getUserModel())
-            .userProfileOptions(RetroGlideExtension.getUserModel(), requireContext())
+            .load(MuseGlideExtension.getUserModel())
+            .userProfileOptions(MuseGlideExtension.getUserModel(), requireContext())
             .into(binding.userImage)
     }
 
@@ -257,7 +257,7 @@ class HomeFragment :
                 }
             }
             Glide.with(this)
-                .load(RetroGlideExtension.getSongModel(songs[index]))
+                .load(MuseGlideExtension.getSongModel(songs[index]))
                 .songCoverOptions(songs[index])
                 .into(imageView)
         }

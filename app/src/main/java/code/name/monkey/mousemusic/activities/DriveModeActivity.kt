@@ -13,8 +13,8 @@ import code.name.monkey.mousemusic.db.toSongEntity
 import code.name.monkey.mousemusic.extensions.accentColor
 import code.name.monkey.mousemusic.extensions.drawAboveSystemBars
 import code.name.monkey.mousemusic.glide.BlurTransformation
-import code.name.monkey.mousemusic.glide.RetroGlideExtension
-import code.name.monkey.mousemusic.glide.RetroGlideExtension.songCoverOptions
+import code.name.monkey.mousemusic.glide.MuseGlideExtension
+import code.name.monkey.mousemusic.glide.MuseGlideExtension.songCoverOptions
 import code.name.monkey.mousemusic.helper.MusicPlayerRemote
 import code.name.monkey.mousemusic.helper.MusicProgressViewUpdateHelper
 import code.name.monkey.mousemusic.helper.MusicProgressViewUpdateHelper.Callback
@@ -228,7 +228,7 @@ class DriveModeActivity : AbsMusicServiceActivity(), Callback {
         binding.songText.text = song.artistName
 
         Glide.with(this)
-            .load(RetroGlideExtension.getSongModel(song))
+            .load(MuseGlideExtension.getSongModel(song))
             .songCoverOptions(song)
             .transform(BlurTransformation.Builder(this).build())
             .into(binding.image)
