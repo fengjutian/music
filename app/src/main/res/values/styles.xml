@@ -231,17 +231,20 @@
         <item name="android:windowSoftInputMode">adjustResize|stateVisible</item>
     </style>
 
-    <style name="HomeActionButton" parent="Widget.Material3.Button.ElevatedButton.Icon">
-        <item name="android:paddingTop">16dp</item>
-        <item name="android:paddingBottom">16dp</item>
+    <style name="HomeActionButton" parent="Widget.Material3.Button.TonalButton.Icon">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:backgroundTint">@color/netease_surface_subtle</item>
         <item name="android:textColor">?attr/colorOnSurface</item>
-        <item name="shapeAppearanceOverlay">
-            @style/ShapeAppearanceOverlay.Material3.FloatingActionButton
-        </item>
-        <item name="iconPadding">16dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="elevation">0dp</item>
+        <item name="iconPadding">12dp</item>
+        <item name="iconTint">@color/netease_brand</item>
         <item name="iconGravity">start</item>
         <item name="android:gravity">start|center_vertical</item>
-        <item name="android:textAppearance">@style/TextViewBody2</item>
+        <item name="android:textAppearance">@style/TextViewBody1</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="CarTheme" parent="Theme.AppCompat.Light.NoActionBar">

@@ -13,13 +13,13 @@
         android:id="@+id/songCurrentProgress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="-8dp"
         android:minWidth="40dp"
         android:singleLine="true"
         android:textColor="?android:attr/textColorSecondary"
-        app:layout_constraintBottom_toBottomOf="@+id/progressSlider"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/progressSlider"
+        app:layout_constraintTop_toBottomOf="@id/progressSlider"
         tools:text="@tools:sample/date/hhmmss" />
 
     <com.google.android.material.slider.Slider
@@ -28,8 +28,9 @@
         android:layout_height="wrap_content"
         android:maxHeight="2dp"
         style="@style/Widget.Muse.Slider"
-        app:layout_constraintEnd_toStartOf="@id/songTotalTime"
-        app:layout_constraintStart_toEndOf="@id/songCurrentProgress"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlHardcoded,UnusedAttribute"
         tools:progress="20" />
@@ -38,14 +39,14 @@
         android:id="@+id/songTotalTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="24dp"
         android:gravity="end"
         android:minWidth="40dp"
         android:singleLine="true"
         android:textColor="?android:attr/textColorSecondary"
-        app:layout_constraintBottom_toBottomOf="@+id/progressSlider"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressSlider"
         tools:text="@tools:sample/date/hhmmss" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -67,7 +68,7 @@
         app:layout_constraintBottom_toTopOf="@+id/text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressSlider"
+        app:layout_constraintTop_toBottomOf="@+id/songCurrentProgress"
         tools:text="@tools:sample/lorem/random" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -114,6 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/roundSelector"
+        app:fabCustomSize="64dp"
         android:padding="16dp"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="@+id/previousButton"
