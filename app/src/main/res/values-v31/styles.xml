@@ -11,7 +11,7 @@
         <item name="colorOnSurface">@color/netease_text_primary</item>
         <item name="colorSurfaceVariant">@color/netease_surface_subtle</item>
         <item name="colorOnSurfaceVariant">@color/netease_text_secondary</item>
-        <item name="colorBackground">@color/netease_background</item>
+        <item name="android:colorBackground">@color/netease_background</item>
         <item name="colorOnBackground">@color/netease_text_primary</item>
         <item name="colorOutline">@color/netease_outline</item>
         <item name="colorOutlineVariant">@color/netease_divider</item>
