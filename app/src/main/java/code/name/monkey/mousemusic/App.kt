@@ -1,8 +1,12 @@
 package code.name.monkey.mousemusic
 
 import android.app.Application
+import android.app.LocaleManager
+import android.os.Build
+import android.os.LocaleList
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
+import androidx.core.content.getSystemService
 import androidx.core.os.LocaleListCompat
 import androidx.preference.PreferenceManager
 import cat.ereza.customactivityoncrash.config.CaocConfig
@@ -59,8 +63,22 @@ class App : Application() {
                 putString(LANGUAGE_NAME, DEFAULT_LANGUAGE_TAG)
                 putBoolean(LOCALE_AUTO_STORE_ENABLED, true)
             }
+        }
+
+        val languageTag = preferences.getString(LANGUAGE_NAME, DEFAULT_LANGUAGE_TAG)
+            ?: DEFAULT_LANGUAGE_TAG
+        if (languageTag != SYSTEM_LANGUAGE_TAG) {
+            applyApplicationLocale(languageTag)
+        }
+    }
+
+    private fun applyApplicationLocale(languageTag: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getSystemService<LocaleManager>()?.applicationLocales =
+                LocaleList.forLanguageTags(languageTag)
+        } else {
             AppCompatDelegate.setApplicationLocales(
-                LocaleListCompat.forLanguageTags(DEFAULT_LANGUAGE_TAG)
+                LocaleListCompat.forLanguageTags(languageTag)
             )
         }
     }
@@ -72,6 +90,7 @@ class App : Application() {
 
     companion object {
         private const val DEFAULT_LANGUAGE_TAG = "zh-CN"
+        private const val SYSTEM_LANGUAGE_TAG = "auto"
         private var instance: App? = null
 
         fun getContext(): App {
