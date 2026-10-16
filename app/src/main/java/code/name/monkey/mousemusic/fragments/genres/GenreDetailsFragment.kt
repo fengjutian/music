@@ -79,13 +79,8 @@ class GenreDetailsFragment : AbsMainActivityFragment(R.layout.fragment_playlist_
         else songAdapter.swapDataSet(emptyList())
     }
 
-    private fun getEmojiByUnicode(unicode: Int): String {
-        return String(Character.toChars(unicode))
-    }
-
     private fun checkIsEmpty() {
         checkForPadding()
-        binding.emptyEmoji.text = getEmojiByUnicode(0x1F631)
         binding.empty.isVisible = songAdapter.itemCount == 0
     }
 

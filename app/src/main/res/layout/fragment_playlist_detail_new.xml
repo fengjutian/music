@@ -160,13 +160,17 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         tools:visibility="visible">
 
-        <com.google.android.material.textview.MaterialTextView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/emptyEmoji"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/empty_text_emoji"
-            android:textAppearance="@style/TextViewHeadline3" />
+            android:background="@drawable/color_circle_gradient"
+            android:backgroundTint="?attr/colorSurfaceVariant"
+            android:contentDescription="@null"
+            android:padding="16dp"
+            app:srcCompat="@drawable/ic_library_music"
+            app:tint="?attr/colorOnSurfaceVariant" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/emptyText"
