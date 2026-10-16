@@ -204,7 +204,6 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
         }
         binding = SlidingMusicPanelLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupNavigationBlur()
         binding.root.setOnApplyWindowInsetsListener { _, insets ->
             windowInsets = WindowInsetsCompat.toWindowInsetsCompat(insets)
             insets
@@ -228,16 +227,6 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
         bottomSheetBehavior.isHideable = PreferenceUtil.swipeDownToDismiss
         bottomSheetBehavior.significantVelocityThreshold = 300
         setMiniPlayerAlphaProgress(0F)
-    }
-
-    private fun setupNavigationBlur() {
-        val blurTarget = binding.contentBlurTarget ?: return
-        binding.navigationBlur?.apply {
-            setupWith(blurTarget)
-                .setFrameClearDrawable(window.decorView.background)
-                .setBlurRadius(22f)
-            clipToOutline = true
-        }
     }
 
     override fun onResume() {
@@ -335,8 +324,6 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
         if (!isLandscape) {
             binding.navigationView.translationY = progress * 500
             binding.navigationView.alpha = alpha
-            binding.navigationBlur?.translationY = progress * 500
-            binding.navigationBlur?.alpha = alpha
         }
         binding.playerFragmentContainer.alpha = (progress - 0.2F) / 0.2F
     }
@@ -473,7 +460,6 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
         if (binding.navigationView.menu.size == 1) {
             isInOneTabMode = true
             binding.navigationView.isVisible = false
-            binding.navigationBlur?.isVisible = false
         } else {
             isInOneTabMode = false
         }
@@ -503,21 +489,14 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
             val mAnimate = animate && bottomSheetBehavior.state == STATE_COLLAPSED
             if (mAnimate) {
                 if (visible) {
-                    binding.navigationBlur?.apply {
-                        isVisible = true
-                        bringToFront()
-                    }
                     binding.navigationView.bringToFront()
                     binding.navigationView.show()
                 } else {
                     binding.navigationView.hide()
-                    binding.navigationBlur?.isVisible = false
                 }
             } else {
                 binding.navigationView.isVisible = visible
-                binding.navigationBlur?.isVisible = visible
                 if (visible && bottomSheetBehavior.state != STATE_EXPANDED) {
-                    binding.navigationBlur?.bringToFront()
                     binding.navigationView.bringToFront()
                 }
             }
