@@ -268,6 +268,10 @@
     <string name="permission_required_section">Required</string>
     <string name="permission_optional_section">Optional features</string>
     <string name="permission_continue">Continue</string>
+    <string name="home_welcome_back">Welcome back</string>
+    <string name="home_welcome_subtitle">Find something worth hearing today</string>
+    <string name="home_quick_access">Quick access</string>
+    <string name="home_quick_access_summary">Your music, one tap away</string>
     <string name="permissions_denied">Permissions denied.</string>
     <string name="personalize">Personalize</string>
     <string name="personalize_settings_summary">Customize your now playing and UI controls</string>

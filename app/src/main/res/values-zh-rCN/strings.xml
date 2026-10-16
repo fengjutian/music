@@ -262,6 +262,10 @@
     <string name="permission_required_section">必要权限</string>
     <string name="permission_optional_section">可选功能</string>
     <string name="permission_continue">继续</string>
+    <string name="home_welcome_back">欢迎回来</string>
+    <string name="home_welcome_subtitle">今天想听点什么？</string>
+    <string name="home_quick_access">快捷入口</string>
+    <string name="home_quick_access_summary">常听内容，一触即达</string>
     <string name="permissions_denied">权限被拒绝。</string>
     <string name="personalize">个性化</string>
     <string name="personalize_settings_summary">自定义正在播放控件和UI控件</string>

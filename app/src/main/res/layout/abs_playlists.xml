@@ -4,7 +4,33 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingBottom="12dp">
+    android:paddingBottom="16dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/quickAccessTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/home_quick_access"
+        android:textAppearance="@style/TextViewHeadline6"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/quickAccessSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="2dp"
+        android:text="@string/home_quick_access_summary"
+        android:textAppearance="@style/TextViewNormal"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/quickAccessTitle" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/history"
@@ -12,21 +38,21 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="6dp"
         android:text="@string/history"
         app:icon="@drawable/ic_history"
         app:layout_constraintEnd_toStartOf="@+id/lastAdded"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/quickAccessSubtitle" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/lastAdded"
         style="@style/HomeActionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="6dp"
         android:layout_marginEnd="16dp"
         android:text="@string/last_added"
         app:icon="@drawable/ic_library_add"
@@ -40,8 +66,8 @@
         style="@style/HomeActionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="6dp"
         android:text="@string/my_top_tracks"
         app:icon="@drawable/ic_trending_up"
         app:layout_constraintEnd_toStartOf="@+id/actionShuffle"
@@ -54,8 +80,8 @@
         style="@style/HomeActionButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="6dp"
         android:text="@string/shuffle"
         app:icon="@drawable/ic_shuffle"
         app:layout_constraintEnd_toEndOf="@+id/lastAdded"

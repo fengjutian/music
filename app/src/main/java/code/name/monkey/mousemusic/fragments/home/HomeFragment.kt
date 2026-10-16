@@ -23,7 +23,6 @@ import code.name.monkey.mousemusic.dialogs.CreatePlaylistDialog
 import code.name.monkey.mousemusic.dialogs.ImportPlaylistDialog
 import code.name.monkey.mousemusic.extensions.accentColor
 import code.name.monkey.mousemusic.extensions.dip
-import code.name.monkey.mousemusic.extensions.elevatedAccentColor
 import code.name.monkey.mousemusic.extensions.setUpMediaRouteButton
 import code.name.monkey.mousemusic.fragments.ReloadType
 import code.name.monkey.mousemusic.fragments.base.AbsMainActivityFragment
@@ -55,8 +54,9 @@ class HomeFragment :
         setupListeners()
         val name = userName?.trim().orEmpty()
         val hasCustomName = name.isNotEmpty() && name != getString(R.string.user_name)
-        binding.titleWelcome.isVisible = hasCustomName
-        binding.titleWelcome.text = name
+        binding.titleWelcome.isVisible = true
+        binding.titleWelcome.text =
+            if (hasCustomName) name else getString(R.string.home_welcome_subtitle)
 
         enterTransition = MaterialFadeThrough().addTarget(binding.contentContainer)
         reenterTransition = MaterialFadeThrough().addTarget(binding.contentContainer)
@@ -77,7 +77,6 @@ class HomeFragment :
 
         loadProfile()
         setupTitle()
-        colorButtons()
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
         view.doOnLayout {
@@ -169,13 +168,6 @@ class HomeFragment :
             .load(MuseGlideExtension.getUserModel())
             .userProfileOptions(MuseGlideExtension.getUserModel(), requireContext())
             .into(binding.userImage)
-    }
-
-    fun colorButtons() {
-        binding.history.elevatedAccentColor()
-        binding.lastAdded.elevatedAccentColor()
-        binding.topPlayed.elevatedAccentColor()
-        binding.actionShuffle.elevatedAccentColor()
     }
 
     private fun checkForMargins() {

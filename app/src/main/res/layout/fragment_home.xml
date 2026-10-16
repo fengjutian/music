@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_ambient_background"
     android:fitsSystemWindows="true">
 
     <code.name.monkey.mousemusic.views.TopAppBarLayout
@@ -10,6 +11,7 @@
         style="?appBarLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:fitsSystemWindows="true" />
 
     <androidx.core.widget.NestedScrollView
