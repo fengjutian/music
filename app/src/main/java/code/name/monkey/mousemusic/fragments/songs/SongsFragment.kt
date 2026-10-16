@@ -3,6 +3,8 @@ package code.name.monkey.mousemusic.fragments.songs
 import android.os.Bundle
 import android.view.*
 import androidx.annotation.LayoutRes
+import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import code.name.monkey.mousemusic.R
@@ -22,7 +24,16 @@ class SongsFragment : AbsRecyclerViewCustomGridSizeFragment<SongAdapter, GridLay
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.findViewById<View>(R.id.emptyDescription).isVisible = true
+        view.findViewById<View>(R.id.emptyActions).isVisible = true
+        view.findViewById<View>(R.id.addMusicButton).setOnClickListener {
+            findNavController().navigate(R.id.action_folder)
+        }
+        view.findViewById<View>(R.id.rescanMusicButton).setOnClickListener {
+            libraryViewModel.forceReload(ReloadType.Songs)
+        }
         libraryViewModel.getSongs().observe(viewLifecycleOwner) {
+            shuffleButton.isVisible = it.isNotEmpty()
             if (it.isNotEmpty())
                 adapter?.swapDataSet(it)
             else

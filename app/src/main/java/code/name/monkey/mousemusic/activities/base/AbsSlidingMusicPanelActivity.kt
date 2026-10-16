@@ -231,10 +231,13 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
     }
 
     private fun setupNavigationBlur() {
-        binding.navigationBlur?.setupWith(binding.contentBlurTarget)
-            ?.setFrameClearDrawable(window.decorView.background)
-            ?.setBlurRadius(22f)
-        binding.navigationBlur?.clipToOutline = true
+        val blurTarget = binding.contentBlurTarget ?: return
+        binding.navigationBlur?.apply {
+            setupWith(blurTarget)
+                .setFrameClearDrawable(window.decorView.background)
+                .setBlurRadius(22f)
+            clipToOutline = true
+        }
     }
 
     override fun onResume() {

@@ -517,6 +517,9 @@
     <string name="pref_save_last_directory_summary">When switching to folder view, restore last used directory</string>
     <string name="pref_save_last_directory_title">Save Last Directory</string>
     <string name="go_to_artist">Go to artist</string>
+    <string name="add_local_music">Add local music</string>
+    <string name="rescan_music">Rescan music</string>
+    <string name="add_music_empty_description">Choose music from your device or scan existing audio files</string>
 
     <!-- The following strings are unused but kept as non-translatable to resolve ExtraTranslation lint errors in 45+ languages without bulk-editing them. -->
     <string name="buy_now" translatable="false" />

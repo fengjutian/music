@@ -54,7 +54,7 @@
         android:layout_height="@dimen/bottom_nav_height"
         android:layout_gravity="bottom"
         android:background="@drawable/bottom_nav_glass_panel"
-        android:elevation="7dp"
+        android:elevation="4dp"
         app:blurOverlayColor="@color/bottom_nav_glass_surface" />
 
     <code.name.monkey.mousemusic.views.TintedBottomNavigationView
