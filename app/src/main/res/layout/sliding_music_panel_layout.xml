@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/apple_glass_panel"
+        android:background="@drawable/bottom_nav_glass_panel"
         android:elevation="8dp"
         android:minHeight="@dimen/bottom_nav_height"
         app:itemHorizontalTranslationEnabled="false"

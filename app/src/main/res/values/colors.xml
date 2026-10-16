@@ -24,12 +24,13 @@
     <color name="apple_glass_surface_strong">#F2FFFFFF</color>
     <color name="apple_glass_highlight">#CCFFFFFF</color>
     <color name="apple_glass_border">#66FFFFFF</color>
-    <color name="home_ambient_primary">#30EC4141</color>
-    <color name="home_ambient_secondary">#18FF9C9C</color>
-    <color name="home_glass_surface">#B8FFFFFF</color>
-    <color name="home_glass_surface_pressed">#D6FFFFFF</color>
-    <color name="home_glass_border">#CCFFFFFF</color>
+    <color name="home_ambient_primary">#66F24B5F</color>
+    <color name="home_ambient_secondary">#408E6CF2</color>
+    <color name="home_glass_surface">#70FFFFFF</color>
+    <color name="home_glass_surface_pressed">#A8FFFFFF</color>
+    <color name="home_glass_border">#B8FFFFFF</color>
     <color name="home_glass_highlight">#F2FFFFFF</color>
+    <color name="bottom_nav_glass_surface">#A6FFFFFF</color>
 
     <color name="twenty_percent_black_overlay">#34000000</color>
     <color name="app_shortcut_default_foreground">#607d8b</color>
