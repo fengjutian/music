@@ -4,7 +4,6 @@ import android.Manifest.permission.BLUETOOTH_CONNECT
 import android.app.AlarmManager
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -14,7 +13,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.getSystemService
 import androidx.core.net.toUri
 import androidx.core.text.parseAsHtml
-import androidx.core.view.isVisible
 import code.name.monkey.appthemehelper.util.VersionUtils
 import code.name.monkey.mousemusic.R
 import code.name.monkey.mousemusic.activities.base.AbsMusicServiceActivity
@@ -59,7 +57,7 @@ class PermissionActivity : AbsMusicServiceActivity() {
                 startActivity(intent)
             }
         } else {
-            binding.audioPermission.setNumber("2")
+            binding.bluetoothPermission.hide()
         }
 
         binding.finish.accentBackgroundColor()
@@ -97,27 +95,11 @@ class PermissionActivity : AbsMusicServiceActivity() {
     override fun onResume() {
         super.onResume()
         binding.finish.isEnabled = hasStoragePermission()
-        if (hasStoragePermission()) {
-            binding.storagePermission.checkImage.isVisible = true
-            binding.storagePermission.checkImage.imageTintList =
-                ColorStateList.valueOf(accentColor())
-        }
-        if (hasAudioPermission()) {
-            binding.audioPermission.checkImage.isVisible = true
-            binding.audioPermission.checkImage.imageTintList =
-                ColorStateList.valueOf(accentColor())
-        }
+        binding.storagePermission.setGranted(hasStoragePermission())
+        binding.audioPermission.setGranted(hasAudioPermission())
         if (VersionUtils.hasS()) {
-            if (hasBluetoothPermission()) {
-                binding.bluetoothPermission.checkImage.isVisible = true
-                binding.bluetoothPermission.checkImage.imageTintList =
-                    ColorStateList.valueOf(accentColor())
-            }
-            if (hasAlarmPermission()) {
-                binding.alarmPermission.checkImage.isVisible = true
-                binding.alarmPermission.checkImage.imageTintList =
-                    ColorStateList.valueOf(accentColor())
-            }
+            binding.bluetoothPermission.setGranted(hasBluetoothPermission())
+            binding.alarmPermission.setGranted(hasAlarmPermission())
         }
     }
 
