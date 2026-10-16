@@ -1,6 +1,9 @@
 package code.name.monkey.mousemusic
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.edit
+import androidx.core.os.LocaleListCompat
 import androidx.preference.PreferenceManager
 import cat.ereza.customactivityoncrash.config.CaocConfig
 import code.name.monkey.appthemehelper.ThemeStore
@@ -19,6 +22,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        configureDefaultLocale()
 
         startKoin {
             androidContext(this@App)
@@ -45,12 +49,29 @@ class App : Application() {
         PreferenceManager.setDefaultValues(this, R.xml.pref_now_playing_screen, false)
     }
 
+    private fun configureDefaultLocale() {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val hasLanguagePreference = preferences.contains(LANGUAGE_NAME)
+        val hasApplicationLocale =
+            AppCompatDelegate.getApplicationLocales().toLanguageTags().isNotEmpty()
+        if (!hasLanguagePreference && !hasApplicationLocale) {
+            preferences.edit {
+                putString(LANGUAGE_NAME, DEFAULT_LANGUAGE_TAG)
+                putBoolean(LOCALE_AUTO_STORE_ENABLED, true)
+            }
+            AppCompatDelegate.setApplicationLocales(
+                LocaleListCompat.forLanguageTags(DEFAULT_LANGUAGE_TAG)
+            )
+        }
+    }
+
     override fun onTerminate() {
         super.onTerminate()
         wallpaperAccentManager.release()
     }
 
     companion object {
+        private const val DEFAULT_LANGUAGE_TAG = "zh-CN"
         private var instance: App? = null
 
         fun getContext(): App {

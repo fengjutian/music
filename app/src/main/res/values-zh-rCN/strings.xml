@@ -256,8 +256,12 @@
     <string name="peek">预览</string>
     <string name="permission_bluetooth_denied">附近设备权限被拒绝。</string>
     <string name="permission_external_storage_denied">访问外部存储权限被拒绝。</string>
-    <string name="permission_summary">应用需要设备存储访问权限来播放音乐</string>
-    <string name="permission_title">存储空间权限</string>
+    <string name="permission_summary">允许读取设备上的音频，以扫描和播放本地音乐</string>
+    <string name="permission_title">音乐访问权限</string>
+    <string name="permission_intro">选择 MuseMusic 可以访问的内容。音乐访问权限为必需权限，其他权限可稍后在设置中启用。</string>
+    <string name="permission_required_section">必要权限</string>
+    <string name="permission_optional_section">可选功能</string>
+    <string name="permission_continue">继续</string>
     <string name="permissions_denied">权限被拒绝。</string>
     <string name="personalize">个性化</string>
     <string name="personalize_settings_summary">自定义正在播放控件和UI控件</string>
@@ -394,10 +398,10 @@
     <string name="reset_artist_image">重置艺术家图片</string>
     <string name="restore">恢复</string>
     <string name="muse_music_player">MuseMusic</string>
-    <string name="ringtone_summary">应用需要系统设置访问权限，才能将音乐设置为为铃声</string>
+    <string name="ringtone_summary">允许修改系统设置，以便将音乐设为铃声</string>
     <string name="ringtone_title">铃声（可选）</string>
-    <string name="permission_alarm_summary">应用程序需要权限来安排准确的闹钟以设置睡眠定时器</string>
-    <string name="permission_alarm_title">闹铃(可选）</string>
+    <string name="permission_alarm_summary">允许安排精确闹钟，以确保睡眠定时器按时停止播放</string>
+    <string name="permission_alarm_title">闹钟（可选）</string>
     <string name="saf_delete_failed">文件删除失败：%s</string>
     <!-- SAF -->
     <string name="saf_error_uri">无法获取 SAF URI</string>
